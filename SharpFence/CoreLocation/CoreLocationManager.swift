@@ -11,10 +11,12 @@ import CoreLocation
 
 class CoreLocationManager: NSObject {
     let clLocationManagerObject = CLLocationManager()
+    var stateObject: StateObjectModel?
     lazy var locations = [LocationModel]()
     
-    func setupLocationManager() {
+    func setupLocationManager(stateObject: StateObjectModel?) {
         clLocationManagerObject.delegate = self
+        self.stateObject = stateObject
         if CLLocationManager.locationServicesEnabled() {
             //handles different cases of app's location services status
             switch CLLocationManager.authorizationStatus() {
@@ -69,5 +71,36 @@ class CoreLocationManager: NSObject {
 }
 
 extension CoreLocationManager: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion){
+            if stateObject?.currentRegionId == nil{
+                stateObject?.currentRegionId = region.identifier
+                stateObject?.currentState = .green
+            }else{
+                //Unexpected. At the time of entry, there should not be any current region ID
+        }
+        stateObject?.objectStateAray.append(StateModel(state: .green, time: Date(), regionId: region.identifier, coordinate: manager.location?.coordinate))
+        stateChangedToGreen(forRegion: region.identifier)
+    }
     
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion){
+        if stateObject?.currentRegionId == nil{
+            //Unexpected. At the time of exit, there should be any current region ID
+        }else{
+            stateObject?.currentRegionId = region.identifier
+            stateObject?.currentState = .white
+        }
+        stateObject?.objectStateAray.append(StateModel(state: .white, time: Date(), regionId: region.identifier, coordinate: manager.location?.coordinate))
+        stateChangedToWhite(fromRegion: region.identifier)
+    }
+}
+
+//Handle state changes
+extension CoreLocationManager{
+     func stateChangedToGreen(forRegion regionId: String){
+        
+    }
+    
+     func stateChangedToWhite(fromRegion regionId: String){
+        
+    }
 }

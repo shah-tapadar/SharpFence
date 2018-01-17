@@ -8,6 +8,21 @@
 
 import Foundation
 
+enum objectState {
+    case white
+    case blue
+    case green
+    case red
+}
+
 class StateObjectModel: NSObject {
-    var objectStateAray: [StateModel]?
+    var currentState: objectState
+    var currentRegionId: String?
+    var objectIdentifier: String?
+    var objectStateAray = [StateModel]()
+    
+    override init() {
+        currentState = .white
+        super.init()
+    }
 }

@@ -7,12 +7,20 @@
 //
 
 import Foundation
-enum objectState {
-    case entry
-    case exit
-}
+import CoreLocation
 class StateModel: NSObject {
     var state: objectState?
     var time: Date?
-    var geofenceId: String?
+    var regionId: String?
+    var latitude: Double?
+    var longitude: Double?
+    
+    init(state: objectState?, time: Date?, regionId: String?, coordinate: CLLocationCoordinate2D?) {
+        super.init()
+        self.state = state
+        self.time = time
+        self.regionId = regionId
+        latitude = coordinate?.latitude
+        longitude = coordinate?.longitude
+    }
 }
