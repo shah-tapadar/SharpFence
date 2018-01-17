@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0192D624200E0ADA0020B62B /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D623200E0ADA0020B62B /* CoreLocationManager.swift */; };
+		0192D626200E0D760020B62B /* UtilityMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D625200E0D760020B62B /* UtilityMethods.swift */; };
+		0192D62A200E1CF80020B62B /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D629200E1CF80020B62B /* LocationModel.swift */; };
+		AF227ADA200CF8F300F99DD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF227AD9200CF8F300F99DD0 /* AppDelegate.swift */; };
+		AF227ADC200CF8F300F99DD0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF227ADB200CF8F300F99DD0 /* HomeViewController.swift */; };
+		AF227ADF200CF8F300F99DD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF227ADD200CF8F300F99DD0 /* Main.storyboard */; };
+		AF227AE2200CF8F300F99DD0 /* SharpFence.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF227AE0200CF8F300F99DD0 /* SharpFence.xcdatamodeld */; };
+		AF227AE4200CF8F300F99DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF227AE3200CF8F300F99DD0 /* Assets.xcassets */; };
+		AF227AE7200CF8F300F99DD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF227AE5200CF8F300F99DD0 /* LaunchScreen.storyboard */; };
+		AF227AF2200CF8F300F99DD0 /* SharpFenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF227AF1200CF8F300F99DD0 /* SharpFenceTests.swift */; };
+		AF227AFD200CF8F300F99DD0 /* SharpFenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF227AFC200CF8F300F99DD0 /* SharpFenceUITests.swift */; };
+		AF94170D200D5877000045D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94170C200D5877000045D2 /* DetailViewController.swift */; };
+		AF94170F200D5893000045D2 /* RouteSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94170E200D5893000045D2 /* RouteSummaryTableViewCell.swift */; };
+		AF941713200D6613000045D2 /* SettingsUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF941712200D6613000045D2 /* SettingsUIViewController.swift */; };
+		AF941715200D6FB9000045D2 /* RouteDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */; };
+		AF941717200D98ED000045D2 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF227AEE200CF8F300F99DD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF227ACE200CF8F300F99DD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF227AD5200CF8F300F99DD0;
+			remoteInfo = SharpFence;
+		};
+		AF227AF9200CF8F300F99DD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF227ACE200CF8F300F99DD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF227AD5200CF8F300F99DD0;
+			remoteInfo = SharpFence;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0192D623200E0ADA0020B62B /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
+		0192D625200E0D760020B62B /* UtilityMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityMethods.swift; sourceTree = "<group>"; };
+		0192D629200E1CF80020B62B /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		AF227AD6200CF8F300F99DD0 /* SharpFence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharpFence.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF227AD9200CF8F300F99DD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF227ADB200CF8F300F99DD0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AF227ADE200CF8F300F99DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF227AE1200CF8F300F99DD0 /* SharpFence.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SharpFence.xcdatamodel; sourceTree = "<group>"; };
+		AF227AE3200CF8F300F99DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF227AE6200CF8F300F99DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF227AE8200CF8F300F99DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF227AED200CF8F300F99DD0 /* SharpFenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharpFenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF227AF1200CF8F300F99DD0 /* SharpFenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpFenceTests.swift; sourceTree = "<group>"; };
+		AF227AF3200CF8F300F99DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF227AF8200CF8F300F99DD0 /* SharpFenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharpFenceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF227AFC200CF8F300F99DD0 /* SharpFenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpFenceUITests.swift; sourceTree = "<group>"; };
+		AF227AFE200CF8F300F99DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF94170C200D5877000045D2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AF94170E200D5893000045D2 /* RouteSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		AF941712200D6613000045D2 /* SettingsUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUIViewController.swift; sourceTree = "<group>"; };
+		AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailsTableViewController.swift; sourceTree = "<group>"; };
+		AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF227AD3200CF8F300F99DD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF227AEA200CF8F300F99DD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF227AF5200CF8F300F99DD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0192D627200E19AF0020B62B /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				0192D623200E0ADA0020B62B /* CoreLocationManager.swift */,
+				0192D629200E1CF80020B62B /* LocationModel.swift */,
+			);
+			path = CoreLocation;
+			sourceTree = "<group>";
+		};
+		0192D628200E19C80020B62B /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				0192D625200E0D760020B62B /* UtilityMethods.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		AF227ACD200CF8F300F99DD0 = {
+			isa = PBXGroup;
+			children = (
+				AF227AD8200CF8F300F99DD0 /* SharpFence */,
+				AF227AF0200CF8F300F99DD0 /* SharpFenceTests */,
+				AF227AFB200CF8F300F99DD0 /* SharpFenceUITests */,
+				AF227AD7200CF8F300F99DD0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF227AD7200CF8F300F99DD0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF227AD6200CF8F300F99DD0 /* SharpFence.app */,
+				AF227AED200CF8F300F99DD0 /* SharpFenceTests.xctest */,
+				AF227AF8200CF8F300F99DD0 /* SharpFenceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF227AD8200CF8F300F99DD0 /* SharpFence */ = {
+			isa = PBXGroup;
+			children = (
+				0192D628200E19C80020B62B /* Utility */,
+				0192D627200E19AF0020B62B /* CoreLocation */,
+				AF227AD9200CF8F300F99DD0 /* AppDelegate.swift */,
+				AF227ADB200CF8F300F99DD0 /* HomeViewController.swift */,
+				AF227ADD200CF8F300F99DD0 /* Main.storyboard */,
+				AF227AE3200CF8F300F99DD0 /* Assets.xcassets */,
+				AF227AE5200CF8F300F99DD0 /* LaunchScreen.storyboard */,
+				AF227AE8200CF8F300F99DD0 /* Info.plist */,
+				AF227AE0200CF8F300F99DD0 /* SharpFence.xcdatamodeld */,
+				AF94170C200D5877000045D2 /* DetailViewController.swift */,
+				AF94170E200D5893000045D2 /* RouteSummaryTableViewCell.swift */,
+				AF941712200D6613000045D2 /* SettingsUIViewController.swift */,
+				AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */,
+				AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */,
+			);
+			path = SharpFence;
+			sourceTree = "<group>";
+		};
+		AF227AF0200CF8F300F99DD0 /* SharpFenceTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF227AF1200CF8F300F99DD0 /* SharpFenceTests.swift */,
+				AF227AF3200CF8F300F99DD0 /* Info.plist */,
+			);
+			path = SharpFenceTests;
+			sourceTree = "<group>";
+		};
+		AF227AFB200CF8F300F99DD0 /* SharpFenceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF227AFC200CF8F300F99DD0 /* SharpFenceUITests.swift */,
+				AF227AFE200CF8F300F99DD0 /* Info.plist */,
+			);
+			path = SharpFenceUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF227AD5200CF8F300F99DD0 /* SharpFence */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF227B01200CF8F300F99DD0 /* Build configuration list for PBXNativeTarget "SharpFence" */;
+			buildPhases = (
+				AF227AD2200CF8F300F99DD0 /* Sources */,
+				AF227AD3200CF8F300F99DD0 /* Frameworks */,
+				AF227AD4200CF8F300F99DD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SharpFence;
+			productName = SharpFence;
+			productReference = AF227AD6200CF8F300F99DD0 /* SharpFence.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF227AEC200CF8F300F99DD0 /* SharpFenceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF227B04200CF8F300F99DD0 /* Build configuration list for PBXNativeTarget "SharpFenceTests" */;
+			buildPhases = (
+				AF227AE9200CF8F300F99DD0 /* Sources */,
+				AF227AEA200CF8F300F99DD0 /* Frameworks */,
+				AF227AEB200CF8F300F99DD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF227AEF200CF8F300F99DD0 /* PBXTargetDependency */,
+			);
+			name = SharpFenceTests;
+			productName = SharpFenceTests;
+			productReference = AF227AED200CF8F300F99DD0 /* SharpFenceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF227AF7200CF8F300F99DD0 /* SharpFenceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF227B07200CF8F300F99DD0 /* Build configuration list for PBXNativeTarget "SharpFenceUITests" */;
+			buildPhases = (
+				AF227AF4200CF8F300F99DD0 /* Sources */,
+				AF227AF5200CF8F300F99DD0 /* Frameworks */,
+				AF227AF6200CF8F300F99DD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF227AFA200CF8F300F99DD0 /* PBXTargetDependency */,
+			);
+			name = SharpFenceUITests;
+			productName = SharpFenceUITests;
+			productReference = AF227AF8200CF8F300F99DD0 /* SharpFenceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF227ACE200CF8F300F99DD0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Rapid Value";
+				TargetAttributes = {
+					AF227AD5200CF8F300F99DD0 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = SPWD97H6WN;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					AF227AEC200CF8F300F99DD0 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AF227AD5200CF8F300F99DD0;
+					};
+					AF227AF7200CF8F300F99DD0 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AF227AD5200CF8F300F99DD0;
+					};
+				};
+			};
+			buildConfigurationList = AF227AD1200CF8F300F99DD0 /* Build configuration list for PBXProject "SharpFence" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF227ACD200CF8F300F99DD0;
+			productRefGroup = AF227AD7200CF8F300F99DD0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF227AD5200CF8F300F99DD0 /* SharpFence */,
+				AF227AEC200CF8F300F99DD0 /* SharpFenceTests */,
+				AF227AF7200CF8F300F99DD0 /* SharpFenceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF227AD4200CF8F300F99DD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF227AE7200CF8F300F99DD0 /* LaunchScreen.storyboard in Resources */,
+				AF227AE4200CF8F300F99DD0 /* Assets.xcassets in Resources */,
+				AF227ADF200CF8F300F99DD0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF227AEB200CF8F300F99DD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF227AF6200CF8F300F99DD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF227AD2200CF8F300F99DD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF227AE2200CF8F300F99DD0 /* SharpFence.xcdatamodeld in Sources */,
+				AF227ADC200CF8F300F99DD0 /* HomeViewController.swift in Sources */,
+				0192D624200E0ADA0020B62B /* CoreLocationManager.swift in Sources */,
+				0192D626200E0D760020B62B /* UtilityMethods.swift in Sources */,
+				AF941717200D98ED000045D2 /* SettingsTableViewCell.swift in Sources */,
+				0192D62A200E1CF80020B62B /* LocationModel.swift in Sources */,
+				AF227ADA200CF8F300F99DD0 /* AppDelegate.swift in Sources */,
+				AF941715200D6FB9000045D2 /* RouteDetailsTableViewController.swift in Sources */,
+				AF941713200D6613000045D2 /* SettingsUIViewController.swift in Sources */,
+				AF94170D200D5877000045D2 /* DetailViewController.swift in Sources */,
+				AF94170F200D5893000045D2 /* RouteSummaryTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF227AE9200CF8F300F99DD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF227AF2200CF8F300F99DD0 /* SharpFenceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF227AF4200CF8F300F99DD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF227AFD200CF8F300F99DD0 /* SharpFenceUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF227AEF200CF8F300F99DD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF227AD5200CF8F300F99DD0 /* SharpFence */;
+			targetProxy = AF227AEE200CF8F300F99DD0 /* PBXContainerItemProxy */;
+		};
+		AF227AFA200CF8F300F99DD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF227AD5200CF8F300F99DD0 /* SharpFence */;
+			targetProxy = AF227AF9200CF8F300F99DD0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF227ADD200CF8F300F99DD0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF227ADE200CF8F300F99DD0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF227AE5200CF8F300F99DD0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF227AE6200CF8F300F99DD0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF227AFF200CF8F300F99DD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AF227B00200CF8F300F99DD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF227B02200CF8F300F99DD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SPWD97H6WN;
+				INFOPLIST_FILE = SharpFence/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rvs.SharpFence;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		AF227B03200CF8F300F99DD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SPWD97H6WN;
+				INFOPLIST_FILE = SharpFence/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rvs.SharpFence;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		AF227B05200CF8F300F99DD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SharpFenceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rapidValue.SharpFenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SharpFence.app/SharpFence";
+			};
+			name = Debug;
+		};
+		AF227B06200CF8F300F99DD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SharpFenceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rapidValue.SharpFenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SharpFence.app/SharpFence";
+			};
+			name = Release;
+		};
+		AF227B08200CF8F300F99DD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SharpFenceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rapidValue.SharpFenceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SharpFence;
+			};
+			name = Debug;
+		};
+		AF227B09200CF8F300F99DD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SharpFenceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rapidValue.SharpFenceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SharpFence;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF227AD1200CF8F300F99DD0 /* Build configuration list for PBXProject "SharpFence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF227AFF200CF8F300F99DD0 /* Debug */,
+				AF227B00200CF8F300F99DD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF227B01200CF8F300F99DD0 /* Build configuration list for PBXNativeTarget "SharpFence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF227B02200CF8F300F99DD0 /* Debug */,
+				AF227B03200CF8F300F99DD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF227B04200CF8F300F99DD0 /* Build configuration list for PBXNativeTarget "SharpFenceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF227B05200CF8F300F99DD0 /* Debug */,
+				AF227B06200CF8F300F99DD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF227B07200CF8F300F99DD0 /* Build configuration list for PBXNativeTarget "SharpFenceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF227B08200CF8F300F99DD0 /* Debug */,
+				AF227B09200CF8F300F99DD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AF227AE0200CF8F300F99DD0 /* SharpFence.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AF227AE1200CF8F300F99DD0 /* SharpFence.xcdatamodel */,
+			);
+			currentVersion = AF227AE1200CF8F300F99DD0 /* SharpFence.xcdatamodel */;
+			path = SharpFence.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AF227ACE200CF8F300F99DD0 /* Project object */;
+}

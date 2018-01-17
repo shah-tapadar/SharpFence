@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16G1114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="TBL_GF_CONFIG" representedClassName="TBL_GF_CONFIG" syncable="YES" codeGenerationType="class">
+        <attribute name="centerLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="centerLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="geoFenceId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="radius" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="TBL_TOLL_RATE" representedClassName="TBL_TOLL_RATE" syncable="YES" codeGenerationType="class">
+        <attribute name="plazaId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="rate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="TBL_TRIP_EVENT" representedClassName="TBL_TRIP_EVENT" syncable="YES" codeGenerationType="class">
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="eventId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventLat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="eventLong" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="eventType" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="geoFenceId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="TBL_TRIP_GF" representedClassName="TBL_TRIP_GF" syncable="YES" codeGenerationType="class">
+        <attribute name="geoFenceId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="queueNo" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="TBL_TRIP_LOCATION" representedClassName="TBL_TRIP_LOCATION" syncable="YES" codeGenerationType="class">
+        <attribute name="gfPattern" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="TBL_TRIP_TOLLPLAZA" representedClassName="TBL_TRIP_TOLLPLAZA" syncable="YES" codeGenerationType="class">
+        <attribute name="locationId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="plazaId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TBL_TRIP_EVENT" positionX="-54" positionY="27" width="128" height="150"/>
+        <element name="TBL_GF_CONFIG" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="TBL_TRIP_GF" positionX="-36" positionY="72" width="128" height="90"/>
+        <element name="TBL_TRIP_LOCATION" positionX="-18" positionY="81" width="128" height="75"/>
+        <element name="TBL_TRIP_TOLLPLAZA" positionX="0" positionY="90" width="128" height="75"/>
+        <element name="TBL_TOLL_RATE" positionX="18" positionY="99" width="128" height="75"/>
+    </elements>
+</model>
