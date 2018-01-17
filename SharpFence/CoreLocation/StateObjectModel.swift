@@ -25,4 +25,12 @@ class StateObjectModel: NSObject {
         currentState = .white
         super.init()
     }
+    
+    func onGreen(forRegion regionId: String){
+        
+    }
+    
+    func onWhite(fromRegion regionId: String){
+        
+    }
 }

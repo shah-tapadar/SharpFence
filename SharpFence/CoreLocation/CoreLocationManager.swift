@@ -79,7 +79,7 @@ extension CoreLocationManager: CLLocationManagerDelegate{
                 //Unexpected. At the time of entry, there should not be any current region ID
         }
         stateObject?.objectStateAray.append(StateModel(state: .green, time: Date(), regionId: region.identifier, coordinate: manager.location?.coordinate))
-        stateChangedToGreen(forRegion: region.identifier)
+        stateObject?.onGreen(forRegion: region.identifier)
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion){
@@ -90,17 +90,7 @@ extension CoreLocationManager: CLLocationManagerDelegate{
             stateObject?.currentState = .white
         }
         stateObject?.objectStateAray.append(StateModel(state: .white, time: Date(), regionId: region.identifier, coordinate: manager.location?.coordinate))
-        stateChangedToWhite(fromRegion: region.identifier)
+        stateObject?.onWhite(fromRegion: region.identifier)
     }
 }
 
-//Handle state changes
-extension CoreLocationManager{
-     func stateChangedToGreen(forRegion regionId: String){
-        
-    }
-    
-     func stateChangedToWhite(fromRegion regionId: String){
-        
-    }
-}
