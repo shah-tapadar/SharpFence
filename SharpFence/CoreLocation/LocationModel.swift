@@ -12,4 +12,5 @@ class LocationModel {
     var identifier: String?
     var latitude: Double?
     var longitude: Double?
-    var radius: Double?}
+    var radius: Double?
+}
