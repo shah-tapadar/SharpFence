@@ -10,6 +10,8 @@
 		0192D624200E0ADA0020B62B /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D623200E0ADA0020B62B /* CoreLocationManager.swift */; };
 		0192D626200E0D760020B62B /* UtilityMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D625200E0D760020B62B /* UtilityMethods.swift */; };
 		0192D62A200E1CF80020B62B /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D629200E1CF80020B62B /* LocationModel.swift */; };
+		0192D62C200F50210020B62B /* StateObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D62B200F50210020B62B /* StateObjectModel.swift */; };
+		0192D62E200F65460020B62B /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D62D200F65460020B62B /* StateModel.swift */; };
 		AF227ADA200CF8F300F99DD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF227AD9200CF8F300F99DD0 /* AppDelegate.swift */; };
 		AF227ADC200CF8F300F99DD0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF227ADB200CF8F300F99DD0 /* HomeViewController.swift */; };
 		AF227ADF200CF8F300F99DD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF227ADD200CF8F300F99DD0 /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 		0192D623200E0ADA0020B62B /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
 		0192D625200E0D760020B62B /* UtilityMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityMethods.swift; sourceTree = "<group>"; };
 		0192D629200E1CF80020B62B /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		0192D62B200F50210020B62B /* StateObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateObjectModel.swift; sourceTree = "<group>"; };
+		0192D62D200F65460020B62B /* StateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
 		AF227AD6200CF8F300F99DD0 /* SharpFence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharpFence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF227AD9200CF8F300F99DD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF227ADB200CF8F300F99DD0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 			children = (
 				0192D623200E0ADA0020B62B /* CoreLocationManager.swift */,
 				0192D629200E1CF80020B62B /* LocationModel.swift */,
+				0192D62B200F50210020B62B /* StateObjectModel.swift */,
+				0192D62D200F65460020B62B /* StateModel.swift */,
 			);
 			path = CoreLocation;
 			sourceTree = "<group>";
@@ -314,10 +320,12 @@
 				0192D626200E0D760020B62B /* UtilityMethods.swift in Sources */,
 				AF941717200D98ED000045D2 /* SettingsTableViewCell.swift in Sources */,
 				0192D62A200E1CF80020B62B /* LocationModel.swift in Sources */,
+				0192D62E200F65460020B62B /* StateModel.swift in Sources */,
 				AF227ADA200CF8F300F99DD0 /* AppDelegate.swift in Sources */,
 				AF941715200D6FB9000045D2 /* RouteDetailsTableViewController.swift in Sources */,
 				AF941713200D6613000045D2 /* SettingsUIViewController.swift in Sources */,
 				AF94170D200D5877000045D2 /* DetailViewController.swift in Sources */,
+				0192D62C200F50210020B62B /* StateObjectModel.swift in Sources */,
 				AF94170F200D5893000045D2 /* RouteSummaryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

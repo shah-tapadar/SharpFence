@@ -42,6 +42,8 @@ class CoreLocationManager: NSObject {
     private func trackUserLocation()  {
         clLocationManagerObject.desiredAccuracy = kCLLocationAccuracyBest
         clLocationManagerObject.allowsBackgroundLocationUpdates = true
+        clLocationManagerObject.distanceFilter = kCLDistanceFilterNone
+        clLocationManagerObject.headingFilter = kCLHeadingFilterNone
         clLocationManagerObject.startUpdatingLocation()
     }
     
