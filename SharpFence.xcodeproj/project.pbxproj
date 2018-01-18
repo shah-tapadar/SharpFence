@@ -25,6 +25,7 @@
 		AF941713200D6613000045D2 /* SettingsUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF941712200D6613000045D2 /* SettingsUIViewController.swift */; };
 		AF941715200D6FB9000045D2 /* RouteDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */; };
 		AF941717200D98ED000045D2 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */; };
+		AF94171920100FE7000045D2 /* AccuracyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94171820100FE7000045D2 /* AccuracyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		AF941712200D6613000045D2 /* SettingsUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUIViewController.swift; sourceTree = "<group>"; };
 		AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailsTableViewController.swift; sourceTree = "<group>"; };
 		AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		AF94171820100FE7000045D2 /* AccuracyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccuracyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				AF941712200D6613000045D2 /* SettingsUIViewController.swift */,
 				AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */,
 				AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */,
+				AF94171820100FE7000045D2 /* AccuracyViewController.swift */,
 			);
 			path = SharpFence;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				0192D62E200F65460020B62B /* StateModel.swift in Sources */,
 				AF227ADA200CF8F300F99DD0 /* AppDelegate.swift in Sources */,
 				AF941715200D6FB9000045D2 /* RouteDetailsTableViewController.swift in Sources */,
+				AF94171920100FE7000045D2 /* AccuracyViewController.swift in Sources */,
 				AF941713200D6613000045D2 /* SettingsUIViewController.swift in Sources */,
 				AF94170D200D5877000045D2 /* DetailViewController.swift in Sources */,
 				0192D62C200F50210020B62B /* StateObjectModel.swift in Sources */,

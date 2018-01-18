@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16G1114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="TBL_AL_CONFIG" representedClassName="TBL_AL_CONFIG" syncable="YES" codeGenerationType="class">
+        <attribute name="disFilter" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="headFilter" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="TBL_GF_CONFIG" representedClassName="TBL_GF_CONFIG" syncable="YES" codeGenerationType="class">
         <attribute name="centerLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="centerLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -34,11 +39,12 @@
         <attribute name="plazaId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TBL_TRIP_EVENT" positionX="-54" positionY="27" width="128" height="150"/>
         <element name="TBL_GF_CONFIG" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="TBL_TOLL_RATE" positionX="18" positionY="99" width="128" height="75"/>
+        <element name="TBL_TRIP_EVENT" positionX="-54" positionY="27" width="128" height="150"/>
         <element name="TBL_TRIP_GF" positionX="-36" positionY="72" width="128" height="90"/>
         <element name="TBL_TRIP_LOCATION" positionX="-18" positionY="81" width="128" height="75"/>
         <element name="TBL_TRIP_TOLLPLAZA" positionX="0" positionY="90" width="128" height="75"/>
-        <element name="TBL_TOLL_RATE" positionX="18" positionY="99" width="128" height="75"/>
+        <element name="TBL_AL_CONFIG" positionX="36" positionY="108" width="128" height="90"/>
     </elements>
 </model>
