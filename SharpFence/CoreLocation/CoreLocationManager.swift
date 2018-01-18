@@ -10,13 +10,15 @@ import Foundation
 import CoreLocation
 
 class CoreLocationManager: NSObject {
-    let clLocationManagerObject = CLLocationManager()
+    lazy let clLocationManagerObject = CLLocationManager()
     var stateObject: StateObjectModel?
+    var selectedAccuracyLevel: CLLocationAccuracy?
     lazy var locations = [LocationModel]()
     
-    func setupLocationManager(stateObject: StateObjectModel?) {
+    func setupLocationManager(stateObject: StateObjectModel?, locationAccuracy: CLLocationAccuracy?) {
         clLocationManagerObject.delegate = self
         self.stateObject = stateObject
+        selectedAccuracyLevel = locationAccuracy
         if CLLocationManager.locationServicesEnabled() {
             //handles different cases of app's location services status
             switch CLLocationManager.authorizationStatus() {
@@ -42,10 +44,8 @@ class CoreLocationManager: NSObject {
     }
     
     private func trackUserLocation()  {
-        clLocationManagerObject.desiredAccuracy = kCLLocationAccuracyBest
+        clLocationManagerObject.desiredAccuracy = selectedAccuracyLevel ?? kCLLocationAccuracyBest
         clLocationManagerObject.allowsBackgroundLocationUpdates = true
-        clLocationManagerObject.distanceFilter = kCLDistanceFilterNone
-        clLocationManagerObject.headingFilter = kCLHeadingFilterNone
         clLocationManagerObject.startUpdatingLocation()
     }
     
