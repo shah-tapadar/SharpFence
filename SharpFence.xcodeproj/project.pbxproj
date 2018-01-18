@@ -120,6 +120,13 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		0192D6422010CC5D0020B62B /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
 		AF227ACD200CF8F300F99DD0 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +150,7 @@
 		AF227AD8200CF8F300F99DD0 /* SharpFence */ = {
 			isa = PBXGroup;
 			children = (
+				0192D6422010CC5D0020B62B /* CoreDataModels */,
 				0192D628200E19C80020B62B /* Utility */,
 				0192D627200E19AF0020B62B /* CoreLocation */,
 				AF227AD9200CF8F300F99DD0 /* AppDelegate.swift */,

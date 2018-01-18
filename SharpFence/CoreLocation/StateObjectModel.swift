@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum objectState {
+enum objectState: String {
     case white
     case blue
     case green
