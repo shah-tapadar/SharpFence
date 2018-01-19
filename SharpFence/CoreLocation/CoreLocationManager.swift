@@ -14,6 +14,7 @@ class CoreLocationManager: NSObject {
     var stateObject: StateObjectModel?
     var selectedAccuracyLevel: CLLocationAccuracy?
     lazy var locations = [LocationModel]()
+    var monitoredRegions: [CLCircularRegion]?
     
     func setupLocationManager(stateObject: StateObjectModel?, locationAccuracy: CLLocationAccuracy?) {
         clLocationManagerObject.delegate = self
@@ -39,6 +40,11 @@ class CoreLocationManager: NSObject {
         }
     }
     
+    func stopLocationMonitoring() {
+        stopTrackinguserLocation()
+        stopTrackingGeofencedRegion()
+    }
+    
     private func locationList(){
         //Fetch all locations from DB. All the locations should be mapped to Location model
     }
@@ -46,7 +52,12 @@ class CoreLocationManager: NSObject {
     private func trackUserLocation()  {
         clLocationManagerObject.desiredAccuracy = selectedAccuracyLevel ?? kCLLocationAccuracyBest
         clLocationManagerObject.allowsBackgroundLocationUpdates = true
+        clLocationManagerObject.showsBackgroundLocationIndicator = true
         clLocationManagerObject.startUpdatingLocation()
+    }
+    
+    private func stopTrackinguserLocation(){
+        clLocationManagerObject.stopUpdatingLocation()
     }
     
     //This method will create circular area, using longitude, latitude and radius, that needs to be monitored
@@ -62,10 +73,21 @@ class CoreLocationManager: NSObject {
     }
     
     private func startTrackingGeofencedRegion() {
+        monitoredRegions = [CLCircularRegion]()
         for location in locations{
             if let _region = createCircularRegion(location: location){
                 clLocationManagerObject.startMonitoring(for: _region)
+                monitoredRegions.append(contentsOf: _region)
             }
+        }
+    }
+    
+    private func stopTrackingGeofencedRegion(){
+        guard let _monitoredRegions = monitoredRegions else {
+            return
+        }
+        for region in _monitoredRegions {
+            clLocationManagerObject.stopMonitoring(for: region)
         }
     }
 }
