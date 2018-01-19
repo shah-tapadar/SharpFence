@@ -9,14 +9,16 @@
 import Foundation
 import UIKit
 import CoreData
+
 class CoreDataWrapper {
-    func saveMonitoredRegionsAndStatus(objectModel: StateObjectModel) {
-        for state in objectModel.objectStateAray{
-            addStateToDB(state: state)
-        }
-    }
     
-    func addStateToDB(state: StateModel) {
+//    func saveMonitoredRegionsAndStatus(objectModel: StateObjectModel) {
+//        for state in objectModel.objectStateAray{
+//            addStateToDB(state: state)
+//        }
+//    }
+    
+    static func addStateToDB(state: StateModel) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }

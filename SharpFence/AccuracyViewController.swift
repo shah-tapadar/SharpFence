@@ -74,34 +74,34 @@ class AccuracyViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func saveClicked(_ sender: Any) {
-        self.save()
+       // self.save()
     }
     
-    func save() {
-        
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-                return
-        }
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
-        
-        let entity =
-            NSEntityDescription.entity(forEntityName: "TBL_AL_CONFIG",
-                                       in: managedContext)!
-        
-        let aLConfig = NSManagedObject(entity: entity,
-                                     insertInto: managedContext)
-        
-        aLConfig.setValue(self.accuracyLevel.text, forKeyPath: "level")
-        aLConfig.setValue(self.distanceFilter.text, forKeyPath: "disFilter")
-        aLConfig.setValue(self.headingFilter.text, forKeyPath: "headFilter")
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
-    }
+//    func save() {
+//        
+//        guard let appDelegate =
+//            UIApplication.shared.delegate as? AppDelegate else {
+//                return
+//        }
+//        let managedContext =
+//            appDelegate.persistentContainer.viewContext
+//        
+//        let entity =
+//            NSEntityDescription.entity(forEntityName: "TBL_AL_CONFIG",
+//                                       in: managedContext)!
+//        
+//        let aLConfig = NSManagedObject(entity: entity,
+//                                     insertInto: managedContext)
+//        
+//        aLConfig.setValue(self.accuracyLevel.text, forKeyPath: "level")
+//        aLConfig.setValue(self.distanceFilter.text, forKeyPath: "disFilter")
+//        aLConfig.setValue(self.headingFilter.text, forKeyPath: "headFilter")
+//        do {
+//            try managedContext.save()
+//        } catch let error as NSError {
+//            print("Could not save. \(error), \(error.userInfo)")
+//        }
+//    }
     
     
     

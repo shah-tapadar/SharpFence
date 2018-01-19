@@ -8,7 +8,8 @@
 
 import Foundation
 
-class LocationModel {
+class LocationModel: NSObject {
+    
     var identifier: String?
     var latitude: Double?
     var longitude: Double?

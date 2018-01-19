@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+
 class StateModel: NSObject {
     var state: objectState?
     var time: NSDate?

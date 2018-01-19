@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0192D624200E0ADA0020B62B /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D623200E0ADA0020B62B /* CoreLocationManager.swift */; };
 		0192D626200E0D760020B62B /* UtilityMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D625200E0D760020B62B /* UtilityMethods.swift */; };
-		0192D62A200E1CF80020B62B /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D629200E1CF80020B62B /* LocationModel.swift */; };
 		0192D62C200F50210020B62B /* StateObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D62B200F50210020B62B /* StateObjectModel.swift */; };
 		0192D62E200F65460020B62B /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D62D200F65460020B62B /* StateModel.swift */; };
 		0192D6412010C82E0020B62B /* CoreDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D6402010C82E0020B62B /* CoreDataWrapper.swift */; };
@@ -27,6 +26,13 @@
 		AF941715200D6FB9000045D2 /* RouteDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */; };
 		AF941717200D98ED000045D2 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */; };
 		AF94171920100FE7000045D2 /* AccuracyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94171820100FE7000045D2 /* AccuracyViewController.swift */; };
+		AF9417242010FA5E000045D2 /* AbstactObjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94171C2010FA5E000045D2 /* AbstactObjectState.swift */; };
+		AF9417262010FA5E000045D2 /* DeviceEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94171E2010FA5E000045D2 /* DeviceEventModel.swift */; };
+		AF9417272010FA5E000045D2 /* FenceEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94171F2010FA5E000045D2 /* FenceEventModel.swift */; };
+		AF9417282010FA5E000045D2 /* GreenObjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417202010FA5E000045D2 /* GreenObjectState.swift */; };
+		AF9417292010FA5E000045D2 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417212010FA5E000045D2 /* LocationModel.swift */; };
+		AF94172A2010FA5E000045D2 /* ObjectStateWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417222010FA5E000045D2 /* ObjectStateWrapper.swift */; };
+		AF94172B2010FA5E000045D2 /* WhiteObjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417232010FA5E000045D2 /* WhiteObjectState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +55,6 @@
 /* Begin PBXFileReference section */
 		0192D623200E0ADA0020B62B /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
 		0192D625200E0D760020B62B /* UtilityMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityMethods.swift; sourceTree = "<group>"; };
-		0192D629200E1CF80020B62B /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		0192D62B200F50210020B62B /* StateObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateObjectModel.swift; sourceTree = "<group>"; };
 		0192D62D200F65460020B62B /* StateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
 		0192D6402010C82E0020B62B /* CoreDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWrapper.swift; sourceTree = "<group>"; };
@@ -73,6 +78,13 @@
 		AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailsTableViewController.swift; sourceTree = "<group>"; };
 		AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		AF94171820100FE7000045D2 /* AccuracyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccuracyViewController.swift; sourceTree = "<group>"; };
+		AF94171C2010FA5E000045D2 /* AbstactObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstactObjectState.swift; sourceTree = "<group>"; };
+		AF94171E2010FA5E000045D2 /* DeviceEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceEventModel.swift; sourceTree = "<group>"; };
+		AF94171F2010FA5E000045D2 /* FenceEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FenceEventModel.swift; sourceTree = "<group>"; };
+		AF9417202010FA5E000045D2 /* GreenObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenObjectState.swift; sourceTree = "<group>"; };
+		AF9417212010FA5E000045D2 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		AF9417222010FA5E000045D2 /* ObjectStateWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectStateWrapper.swift; sourceTree = "<group>"; };
+		AF9417232010FA5E000045D2 /* WhiteObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteObjectState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				0192D623200E0ADA0020B62B /* CoreLocationManager.swift */,
-				0192D629200E1CF80020B62B /* LocationModel.swift */,
 				0192D62B200F50210020B62B /* StateObjectModel.swift */,
 				0192D62D200F65460020B62B /* StateModel.swift */,
 				0192D6402010C82E0020B62B /* CoreDataWrapper.swift */,
@@ -150,6 +161,7 @@
 		AF227AD8200CF8F300F99DD0 /* SharpFence */ = {
 			isa = PBXGroup;
 			children = (
+				AF94171B2010F9D9000045D2 /* LocationModels */,
 				0192D6422010CC5D0020B62B /* CoreDataModels */,
 				0192D628200E19C80020B62B /* Utility */,
 				0192D627200E19AF0020B62B /* CoreLocation */,
@@ -186,6 +198,20 @@
 				AF227AFE200CF8F300F99DD0 /* Info.plist */,
 			);
 			path = SharpFenceUITests;
+			sourceTree = "<group>";
+		};
+		AF94171B2010F9D9000045D2 /* LocationModels */ = {
+			isa = PBXGroup;
+			children = (
+				AF94171C2010FA5E000045D2 /* AbstactObjectState.swift */,
+				AF94171E2010FA5E000045D2 /* DeviceEventModel.swift */,
+				AF94171F2010FA5E000045D2 /* FenceEventModel.swift */,
+				AF9417202010FA5E000045D2 /* GreenObjectState.swift */,
+				AF9417212010FA5E000045D2 /* LocationModel.swift */,
+				AF9417222010FA5E000045D2 /* ObjectStateWrapper.swift */,
+				AF9417232010FA5E000045D2 /* WhiteObjectState.swift */,
+			);
+			name = LocationModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,12 +354,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF9417262010FA5E000045D2 /* DeviceEventModel.swift in Sources */,
 				AF227AE2200CF8F300F99DD0 /* SharpFence.xcdatamodeld in Sources */,
 				AF227ADC200CF8F300F99DD0 /* HomeViewController.swift in Sources */,
 				0192D624200E0ADA0020B62B /* CoreLocationManager.swift in Sources */,
+				AF94172A2010FA5E000045D2 /* ObjectStateWrapper.swift in Sources */,
 				0192D626200E0D760020B62B /* UtilityMethods.swift in Sources */,
 				AF941717200D98ED000045D2 /* SettingsTableViewCell.swift in Sources */,
-				0192D62A200E1CF80020B62B /* LocationModel.swift in Sources */,
 				0192D62E200F65460020B62B /* StateModel.swift in Sources */,
 				AF227ADA200CF8F300F99DD0 /* AppDelegate.swift in Sources */,
 				0192D6412010C82E0020B62B /* CoreDataWrapper.swift in Sources */,
@@ -341,8 +368,13 @@
 				AF94171920100FE7000045D2 /* AccuracyViewController.swift in Sources */,
 				AF941713200D6613000045D2 /* SettingsUIViewController.swift in Sources */,
 				AF94170D200D5877000045D2 /* DetailViewController.swift in Sources */,
+				AF9417242010FA5E000045D2 /* AbstactObjectState.swift in Sources */,
+				AF94172B2010FA5E000045D2 /* WhiteObjectState.swift in Sources */,
 				0192D62C200F50210020B62B /* StateObjectModel.swift in Sources */,
 				AF94170F200D5893000045D2 /* RouteSummaryTableViewCell.swift in Sources */,
+				AF9417282010FA5E000045D2 /* GreenObjectState.swift in Sources */,
+				AF9417292010FA5E000045D2 /* LocationModel.swift in Sources */,
+				AF9417272010FA5E000045D2 /* FenceEventModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
