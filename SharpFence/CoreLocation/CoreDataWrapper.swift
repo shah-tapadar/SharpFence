@@ -31,8 +31,8 @@ class CoreDataWrapper {
         tripEvent.timeStamp =  state.time
     }
     
-    func fetchSavedLocation() -> [TBL_AL_CONFIG]?{
-        let fetchRequest: NSFetchRequest<TBL_AL_CONFIG> = TBL_AL_CONFIG.fetchRequest()
+    static func fetchSavedLocation() -> [TBL_GF_CONFIG]?{
+        let fetchRequest: NSFetchRequest<TBL_GF_CONFIG> = TBL_GF_CONFIG.fetchRequest()
         do {
             return try  fetchRequest.execute()
 

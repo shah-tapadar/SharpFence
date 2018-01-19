@@ -13,7 +13,7 @@ class CoreLocationManager: NSObject {
     let clLocationManagerObject = CLLocationManager()
     var stateObject: StateObjectModel?
     var selectedAccuracyLevel: CLLocationAccuracy?
-    lazy var locations = [LocationModel]()
+    var locations: [LocationModel]?
     var monitoredRegions: [CLCircularRegion]?
     
     func setupLocationManager(stateObject: StateObjectModel?, locationAccuracy: CLLocationAccuracy?) {
@@ -47,12 +47,12 @@ class CoreLocationManager: NSObject {
     
     private func locationList(){
         //Fetch all locations from DB. All the locations should be mapped to Location model
+        locations = DataWrapper.locationModels()
     }
     
     private func trackUserLocation()  {
         clLocationManagerObject.desiredAccuracy = selectedAccuracyLevel ?? kCLLocationAccuracyBest
         clLocationManagerObject.allowsBackgroundLocationUpdates = true
-        clLocationManagerObject.showsBackgroundLocationIndicator = true
         clLocationManagerObject.startUpdatingLocation()
     }
     
@@ -73,11 +73,14 @@ class CoreLocationManager: NSObject {
     }
     
     private func startTrackingGeofencedRegion() {
+        guard let _locations = locations else {
+            return
+        }
         monitoredRegions = [CLCircularRegion]()
-        for location in locations{
+        for location in _locations{
             if let _region = createCircularRegion(location: location){
                 clLocationManagerObject.startMonitoring(for: _region)
-                monitoredRegions.append(contentsOf: _region)
+                monitoredRegions?.append(_region)
             }
         }
     }

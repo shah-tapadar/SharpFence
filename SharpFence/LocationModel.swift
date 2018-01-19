@@ -14,4 +14,11 @@ class LocationModel: NSObject {
     var latitude: Double?
     var longitude: Double?
     var radius: Double?
+    
+    init(dbModel: TBL_GF_CONFIG) {
+        identifier = dbModel.geoFenceId
+        latitude = dbModel.centerLatitude
+        longitude = dbModel.centerLongitude
+        radius = dbModel.radius
+    }
 }

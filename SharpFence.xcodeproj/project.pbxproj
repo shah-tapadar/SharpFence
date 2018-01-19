@@ -12,6 +12,7 @@
 		0192D62C200F50210020B62B /* StateObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D62B200F50210020B62B /* StateObjectModel.swift */; };
 		0192D62E200F65460020B62B /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D62D200F65460020B62B /* StateModel.swift */; };
 		0192D6412010C82E0020B62B /* CoreDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D6402010C82E0020B62B /* CoreDataWrapper.swift */; };
+		0192D644201219780020B62B /* DataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D643201219780020B62B /* DataWrapper.swift */; };
 		AF227ADA200CF8F300F99DD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF227AD9200CF8F300F99DD0 /* AppDelegate.swift */; };
 		AF227ADC200CF8F300F99DD0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF227ADB200CF8F300F99DD0 /* HomeViewController.swift */; };
 		AF227ADF200CF8F300F99DD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF227ADD200CF8F300F99DD0 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		0192D62B200F50210020B62B /* StateObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateObjectModel.swift; sourceTree = "<group>"; };
 		0192D62D200F65460020B62B /* StateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
 		0192D6402010C82E0020B62B /* CoreDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWrapper.swift; sourceTree = "<group>"; };
+		0192D643201219780020B62B /* DataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWrapper.swift; sourceTree = "<group>"; };
 		AF227AD6200CF8F300F99DD0 /* SharpFence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharpFence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF227AD9200CF8F300F99DD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF227ADB200CF8F300F99DD0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				AF9417212010FA5E000045D2 /* LocationModel.swift */,
 				AF9417222010FA5E000045D2 /* ObjectStateWrapper.swift */,
 				AF9417232010FA5E000045D2 /* WhiteObjectState.swift */,
+				0192D643201219780020B62B /* DataWrapper.swift */,
 			);
 			name = LocationModels;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				AF227ADA200CF8F300F99DD0 /* AppDelegate.swift in Sources */,
 				0192D6412010C82E0020B62B /* CoreDataWrapper.swift in Sources */,
 				AF941715200D6FB9000045D2 /* RouteDetailsTableViewController.swift in Sources */,
+				0192D644201219780020B62B /* DataWrapper.swift in Sources */,
 				AF94171920100FE7000045D2 /* AccuracyViewController.swift in Sources */,
 				AF941713200D6613000045D2 /* SettingsUIViewController.swift in Sources */,
 				AF94170D200D5877000045D2 /* DetailViewController.swift in Sources */,
