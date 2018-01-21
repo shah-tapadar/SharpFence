@@ -34,6 +34,7 @@
 		AF9417292010FA5E000045D2 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417212010FA5E000045D2 /* LocationModel.swift */; };
 		AF94172A2010FA5E000045D2 /* ObjectStateWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417222010FA5E000045D2 /* ObjectStateWrapper.swift */; };
 		AF94172B2010FA5E000045D2 /* WhiteObjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417232010FA5E000045D2 /* WhiteObjectState.swift */; };
+		AF9417312014250E000045D2 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417302014250E000045D2 /* CoreDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		AF9417212010FA5E000045D2 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		AF9417222010FA5E000045D2 /* ObjectStateWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectStateWrapper.swift; sourceTree = "<group>"; };
 		AF9417232010FA5E000045D2 /* WhiteObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteObjectState.swift; sourceTree = "<group>"; };
+		AF9417302014250E000045D2 /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,13 +135,6 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		0192D6422010CC5D0020B62B /* CoreDataModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CoreDataModels;
-			sourceTree = "<group>";
-		};
 		AF227ACD200CF8F300F99DD0 = {
 			isa = PBXGroup;
 			children = (
@@ -163,23 +158,17 @@
 		AF227AD8200CF8F300F99DD0 /* SharpFence */ = {
 			isa = PBXGroup;
 			children = (
+				AF941734201425A5000045D2 /* CoreDataModel */,
 				AF94171B2010F9D9000045D2 /* LocationModels */,
-				0192D6422010CC5D0020B62B /* CoreDataModels */,
 				0192D628200E19C80020B62B /* Utility */,
 				0192D627200E19AF0020B62B /* CoreLocation */,
 				AF227AD9200CF8F300F99DD0 /* AppDelegate.swift */,
-				AF227ADB200CF8F300F99DD0 /* HomeViewController.swift */,
+				AF94173320142570000045D2 /* View Controllers */,
 				AF227ADD200CF8F300F99DD0 /* Main.storyboard */,
 				AF227AE3200CF8F300F99DD0 /* Assets.xcassets */,
 				AF227AE5200CF8F300F99DD0 /* LaunchScreen.storyboard */,
 				AF227AE8200CF8F300F99DD0 /* Info.plist */,
 				AF227AE0200CF8F300F99DD0 /* SharpFence.xcdatamodeld */,
-				AF94170C200D5877000045D2 /* DetailViewController.swift */,
-				AF94170E200D5893000045D2 /* RouteSummaryTableViewCell.swift */,
-				AF941712200D6613000045D2 /* SettingsUIViewController.swift */,
-				AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */,
-				AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */,
-				AF94171820100FE7000045D2 /* AccuracyViewController.swift */,
 			);
 			path = SharpFence;
 			sourceTree = "<group>";
@@ -215,6 +204,28 @@
 				0192D643201219780020B62B /* DataWrapper.swift */,
 			);
 			name = LocationModels;
+			sourceTree = "<group>";
+		};
+		AF94173320142570000045D2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF227ADB200CF8F300F99DD0 /* HomeViewController.swift */,
+				AF94170C200D5877000045D2 /* DetailViewController.swift */,
+				AF94170E200D5893000045D2 /* RouteSummaryTableViewCell.swift */,
+				AF941712200D6613000045D2 /* SettingsUIViewController.swift */,
+				AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */,
+				AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */,
+				AF94171820100FE7000045D2 /* AccuracyViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AF941734201425A5000045D2 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF9417302014250E000045D2 /* CoreDataModel.swift */,
+			);
+			name = CoreDataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +376,7 @@
 				0192D626200E0D760020B62B /* UtilityMethods.swift in Sources */,
 				AF941717200D98ED000045D2 /* SettingsTableViewCell.swift in Sources */,
 				0192D62E200F65460020B62B /* StateModel.swift in Sources */,
+				AF9417312014250E000045D2 /* CoreDataModel.swift in Sources */,
 				AF227ADA200CF8F300F99DD0 /* AppDelegate.swift in Sources */,
 				0192D6412010C82E0020B62B /* CoreDataWrapper.swift in Sources */,
 				AF941715200D6FB9000045D2 /* RouteDetailsTableViewController.swift in Sources */,

@@ -9,15 +9,6 @@
 import UIKit
 
 
-struct RouteDetails {
-
-    var gfID:String?
-    var time: String?
-    var latitude: String?
-    var longitude: String?
-    var distanceFromCenter: String?
-
-}
 
 
 class RouteDetailsTableViewController: UITableViewController {

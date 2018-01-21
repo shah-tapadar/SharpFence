@@ -21,27 +21,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
         self.routeSummaryTableView.dataSource = self
         self.routeSummaryTableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-                return
-        }
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
-        let fetchRequest =
-            NSFetchRequest<NSManagedObject>(entityName: "TBL_TRIP_EVENT")
-        do {
-            tripEvents = try managedContext.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
+       tripEvents = CoreDataWrapper.fetchTripEvents()
     }
 
     
@@ -68,20 +54,7 @@ class HomeViewController: UIViewController {
     
 
     @IBAction func flushData(_ sender: Any) {
-        
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {return}
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
-        let fetchRequest =
-            NSFetchRequest<NSFetchRequestResult>(entityName: "TBL_TRIP_EVENT")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
-        do {
-            try managedContext.execute(deleteRequest)
-        } catch let error as NSError {
-            debugPrint(error)
-        }
+        CoreDataWrapper.flushData()
     }
     
     

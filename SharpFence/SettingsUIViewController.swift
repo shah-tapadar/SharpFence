@@ -12,17 +12,22 @@ import CoreData
 class SettingsUIViewController: UIViewController {
 
     let reuseIdentifier = "settingsCell"
-    //var boundaries: [NSManagedObject] = []
-    var numberOfRows:Int =  3
+    var boundaries: [GFDetails] = []
+    
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+       super.viewDidLoad()
        self.settingsTableView.dataSource = self
        self.settingsTableView.delegate = self
        self.hideKeyboardWhenTappedAround()
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       // boundaries = CoreDataWrapper.fetchGF() as! [GFDetails]
     }
 
     @IBOutlet weak var settingsTableView: UITableView!
@@ -40,35 +45,26 @@ class SettingsUIViewController: UIViewController {
     
     
     @IBAction func savePressed(_ sender: Any) {
-           }
-    
-    
-    
-//    func saveData(latitude: Double, longitude:Double, radius: Double){
-//    
-//        guard let appDelegate =
-//            UIApplication.shared.delegate as? AppDelegate else {
-//                return
+        
+     
+//        for index in 0...boundaries.count {
+//            let cell = self.settingsTableView.dequeueReusableCell(withIdentifier: reuseIdentifier)! as! SettingsTableViewCell
+//            boundaries[index].centerLatitude = Double(cell.latitudeTextField.text ?? "0.0")!
+//            boundaries[index].centerLongitude = Double(cell.latitudeTextField.text ?? "0.0")!
+//            boundaries[index].radius = Double(cell.radiusTextField.text ?? "0.0")!
+//            CoreDataWrapper.saveGFToDB(dataModel: boundaries[index])
 //        }
-//        let managedContext = appDelegate.persistentContainer.viewContext
-//        let entity = NSEntityDescription.entity(forEntityName: "Boundary", in: managedContext)!
-//        let boundary = NSManagedObject(entity: entity, insertInto: managedContext)
-//        boundary.setValue(latitude, forKeyPath: "latitude")
-//        boundary.setValue(longitude, forKeyPath: "longitude")
-//        boundary.setValue(radius, forKeyPath: "radius")
-//        do {
-//            try managedContext.save()
-//            boundaries.append(boundary)
-//        } catch let error as NSError {
-//            print("Could not save. \(error), \(error.userInfo)")
-//        }
-//}
+        
+    }
+    
+    
+    
     
     @IBAction func addNew(_ sender: Any) {
         settingsTableView.beginUpdates()
        
-        settingsTableView.insertRows(at: [IndexPath(row: numberOfRows, section: 0)], with: .automatic)
-         self.numberOfRows = self.numberOfRows + 1
+        settingsTableView.insertRows(at: [IndexPath(row: boundaries.count, section: 0)], with: .automatic)
+         self.boundaries.append(GFDetails.init())
         settingsTableView.endUpdates()
     }
     
@@ -86,7 +82,7 @@ extension SettingsUIViewController : UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.numberOfRows
+        return self.boundaries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,9 +100,7 @@ extension SettingsUIViewController : UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            print("Deleted")
-            
-            self.numberOfRows = numberOfRows - 1
+            self.boundaries.remove(at: indexPath.row)
             self.settingsTableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
@@ -116,16 +110,4 @@ extension SettingsUIViewController : UITableViewDataSource, UITableViewDelegate 
 
 
 
-
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
 
