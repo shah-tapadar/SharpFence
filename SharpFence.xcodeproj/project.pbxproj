@@ -13,6 +13,14 @@
 		0192D62E200F65460020B62B /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D62D200F65460020B62B /* StateModel.swift */; };
 		0192D6412010C82E0020B62B /* CoreDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D6402010C82E0020B62B /* CoreDataWrapper.swift */; };
 		0192D644201219780020B62B /* DataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D643201219780020B62B /* DataWrapper.swift */; };
+		01CD23DB2015AC59005F3065 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD23DA2015AC59005F3065 /* LogManager.swift */; };
+		01CD23DD2015ACE3005F3065 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD23DC2015ACE3005F3065 /* FileManager.swift */; };
+		01CD23E520161362005F3065 /* Jewell Ave Interchange-Appro.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 01CD23DF20161361005F3065 /* Jewell Ave Interchange-Appro.gpx */; };
+		01CD23E620161362005F3065 /* Jewell Ave Interchange-main.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 01CD23E020161361005F3065 /* Jewell Ave Interchange-main.gpx */; };
+		01CD23E720161362005F3065 /* Jewell Ave Interchange.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 01CD23E120161361005F3065 /* Jewell Ave Interchange.gpx */; };
+		01CD23E820161362005F3065 /* Near Seaport-Airport.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 01CD23E220161361005F3065 /* Near Seaport-Airport.gpx */; };
+		01CD23E920161362005F3065 /* Rajagiri.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 01CD23E320161361005F3065 /* Rajagiri.gpx */; };
+		01CD23EA20161362005F3065 /* Road.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 01CD23E420161361005F3065 /* Road.gpx */; };
 		AF227ADA200CF8F300F99DD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF227AD9200CF8F300F99DD0 /* AppDelegate.swift */; };
 		AF227ADC200CF8F300F99DD0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF227ADB200CF8F300F99DD0 /* HomeViewController.swift */; };
 		AF227ADF200CF8F300F99DD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF227ADD200CF8F300F99DD0 /* Main.storyboard */; };
@@ -61,6 +69,14 @@
 		0192D62D200F65460020B62B /* StateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
 		0192D6402010C82E0020B62B /* CoreDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWrapper.swift; sourceTree = "<group>"; };
 		0192D643201219780020B62B /* DataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWrapper.swift; sourceTree = "<group>"; };
+		01CD23DA2015AC59005F3065 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
+		01CD23DC2015ACE3005F3065 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		01CD23DF20161361005F3065 /* Jewell Ave Interchange-Appro.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Jewell Ave Interchange-Appro.gpx"; sourceTree = "<group>"; };
+		01CD23E020161361005F3065 /* Jewell Ave Interchange-main.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Jewell Ave Interchange-main.gpx"; sourceTree = "<group>"; };
+		01CD23E120161361005F3065 /* Jewell Ave Interchange.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Jewell Ave Interchange.gpx"; sourceTree = "<group>"; };
+		01CD23E220161361005F3065 /* Near Seaport-Airport.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Near Seaport-Airport.gpx"; sourceTree = "<group>"; };
+		01CD23E320161361005F3065 /* Rajagiri.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Rajagiri.gpx; sourceTree = "<group>"; };
+		01CD23E420161361005F3065 /* Road.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Road.gpx; sourceTree = "<group>"; };
 		AF227AD6200CF8F300F99DD0 /* SharpFence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharpFence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF227AD9200CF8F300F99DD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF227ADB200CF8F300F99DD0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -131,8 +147,23 @@
 			isa = PBXGroup;
 			children = (
 				0192D625200E0D760020B62B /* UtilityMethods.swift */,
+				01CD23DA2015AC59005F3065 /* LogManager.swift */,
+				01CD23DC2015ACE3005F3065 /* FileManager.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		01CD23DE20161361005F3065 /* TestLocations */ = {
+			isa = PBXGroup;
+			children = (
+				01CD23DF20161361005F3065 /* Jewell Ave Interchange-Appro.gpx */,
+				01CD23E020161361005F3065 /* Jewell Ave Interchange-main.gpx */,
+				01CD23E120161361005F3065 /* Jewell Ave Interchange.gpx */,
+				01CD23E220161361005F3065 /* Near Seaport-Airport.gpx */,
+				01CD23E320161361005F3065 /* Rajagiri.gpx */,
+				01CD23E420161361005F3065 /* Road.gpx */,
+			);
+			path = TestLocations;
 			sourceTree = "<group>";
 		};
 		AF227ACD200CF8F300F99DD0 = {
@@ -158,6 +189,7 @@
 		AF227AD8200CF8F300F99DD0 /* SharpFence */ = {
 			isa = PBXGroup;
 			children = (
+				01CD23DE20161361005F3065 /* TestLocations */,
 				AF941734201425A5000045D2 /* CoreDataModel */,
 				AF94171B2010F9D9000045D2 /* LocationModels */,
 				0192D628200E19C80020B62B /* Utility */,
@@ -297,7 +329,7 @@
 					AF227AD5200CF8F300F99DD0 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = 937DQK46D3;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -341,8 +373,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CD23EA20161362005F3065 /* Road.gpx in Resources */,
 				AF227AE7200CF8F300F99DD0 /* LaunchScreen.storyboard in Resources */,
+				01CD23E820161362005F3065 /* Near Seaport-Airport.gpx in Resources */,
+				01CD23E920161362005F3065 /* Rajagiri.gpx in Resources */,
 				AF227AE4200CF8F300F99DD0 /* Assets.xcassets in Resources */,
+				01CD23E720161362005F3065 /* Jewell Ave Interchange.gpx in Resources */,
+				01CD23E620161362005F3065 /* Jewell Ave Interchange-main.gpx in Resources */,
+				01CD23E520161362005F3065 /* Jewell Ave Interchange-Appro.gpx in Resources */,
 				AF227ADF200CF8F300F99DD0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CD23DB2015AC59005F3065 /* LogManager.swift in Sources */,
 				AF9417262010FA5E000045D2 /* DeviceEventModel.swift in Sources */,
 				AF227AE2200CF8F300F99DD0 /* SharpFence.xcdatamodeld in Sources */,
 				AF227ADC200CF8F300F99DD0 /* HomeViewController.swift in Sources */,
@@ -377,6 +416,7 @@
 				AF941717200D98ED000045D2 /* SettingsTableViewCell.swift in Sources */,
 				0192D62E200F65460020B62B /* StateModel.swift in Sources */,
 				AF9417312014250E000045D2 /* CoreDataModel.swift in Sources */,
+				01CD23DD2015ACE3005F3065 /* FileManager.swift in Sources */,
 				AF227ADA200CF8F300F99DD0 /* AppDelegate.swift in Sources */,
 				0192D6412010C82E0020B62B /* CoreDataWrapper.swift in Sources */,
 				AF941715200D6FB9000045D2 /* RouteDetailsTableViewController.swift in Sources */,
@@ -540,11 +580,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 937DQK46D3;
 				INFOPLIST_FILE = SharpFence/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rvs.SharpFenceRVS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9d67e4b1-e520-43e8-a98f-3ae28d514dfa";
+				PROVISIONING_PROFILE_SPECIFIER = SharpFence;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -553,11 +597,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 937DQK46D3;
 				INFOPLIST_FILE = SharpFence/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rvs.SharpFenceRVS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9d67e4b1-e520-43e8-a98f-3ae28d514dfa";
+				PROVISIONING_PROFILE_SPECIFIER = SharpFence;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

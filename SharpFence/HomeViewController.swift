@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
 class HomeViewController: UIViewController {
 
@@ -16,18 +17,20 @@ class HomeViewController: UIViewController {
     let routeDetailsSegueIdentifier = "routeDetails"
     var valueToPass: RouteDetails?
     var valueToPassLabel: String?
-    var tripEvents :[NSManagedObject] = []
-    
-    
+    var tripEvents :[TBL_TRIP_EVENT]?
+    lazy var logManager = LogManager()
+    var stateObject: StateObjectModel?
+    lazy var locationManager = CoreLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+//        CLLocationManager().requestAlwaysAuthorization()
         self.routeSummaryTableView.dataSource = self
         self.routeSummaryTableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       tripEvents = CoreDataWrapper.fetchTripEvents()
+       tripEvents = CoreDataWrapper.fetchAllTripEvents()
     }
 
     
@@ -50,6 +53,14 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func startDriving(_ sender: Any) {
+        let switchButton = sender as! UISwitch
+        if switchButton.isOn {
+            stateObject = StateObjectModel()
+            locationManager.setupLocationManager(stateObject: stateObject, locationAccuracy: kCLLocationAccuracyBest)
+        }else{
+            locationManager.stopLocationMonitoring()
+            CoreDataWrapper.saveMonitoredRegionsAndStatus(objectModel: stateObject!)
+        }
     }
     
 
@@ -59,6 +70,7 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func emailData(_ sender: Any) {
+        logManager.emailLog(presentMailComposeron: self)
     }
 
 }
@@ -74,13 +86,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return   tripEvents.count
+        return   tripEvents?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.routeSummaryTableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as! RouteSummaryTableViewCell
         
-       let tripEvent = tripEvents[indexPath.row]
+       let tripEvent = tripEvents![indexPath.row]
       if let eventId =  tripEvent.value(forKeyPath: "eventId"), let eventType = tripEvent.value(forKeyPath: "eventType"), let timeStamp = tripEvent.value(forKeyPath: "timeStamp") {
         cell.tilteLabel.text = String(describing: eventId) + " " + String(describing: eventType)
         cell.timeStampLabel.text = String(describing: timeStamp)
@@ -99,7 +111,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let currentCell = tableView.cellForRow(at: indexPath) as! RouteSummaryTableViewCell
         
         self.valueToPassLabel = currentCell.tilteLabel.text
-        let tripEvent = tripEvents[indexPath.row]
+        let tripEvent = tripEvents![indexPath.row]
         
         if let geoId =  tripEvent.value(forKeyPath: "geoFenceId"), let time = tripEvent.value(forKeyPath: "timeStamp"), let latititude = tripEvent.value(forKeyPath: "eventLat"), let longitude = tripEvent.value(forKeyPath: "eventLong"), let distance = tripEvent.value(forKeyPath: "distance")  {
             self.valueToPass = RouteDetails(

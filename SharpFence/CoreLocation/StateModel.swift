@@ -11,12 +11,12 @@ import CoreLocation
 
 class StateModel: NSObject {
     var state: objectState?
-    var time: NSDate?
+    var time: String?
     var regionId: String?
     var latitude: Double?
     var longitude: Double?
     
-    init(state: objectState?, time: NSDate?, regionId: String?, coordinate: CLLocationCoordinate2D?) {
+    init(state: objectState?, time: String?, regionId: String?, coordinate: CLLocationCoordinate2D?) {
         super.init()
         self.state = state
         self.time = time

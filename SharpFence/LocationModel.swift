@@ -16,9 +16,14 @@ class LocationModel: NSObject {
     var radius: Double?
     
     init(dbModel: TBL_GF_CONFIG) {
+        super.init()
         identifier = dbModel.geoFenceId
         latitude = dbModel.centerLatitude
         longitude = dbModel.centerLongitude
         radius = dbModel.radius
+    }
+    
+    override init() {
+        super.init()
     }
 }

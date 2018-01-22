@@ -40,6 +40,6 @@ class ObjectStateWrapper: NSObject {
         } else {
             location = CLLocationCoordinate2D.init()
         }
-        CoreDataWrapper.addStateToDB(state: StateModel.init(state: state, time: NSDate(), regionId:fenceEvent.identifier, coordinate:location))
+        CoreDataWrapper.addStateToDB(state: StateModel.init(state: state, time: DateFormatter().string(from: Date()), regionId:fenceEvent.identifier, coordinate:location))
     }
 }

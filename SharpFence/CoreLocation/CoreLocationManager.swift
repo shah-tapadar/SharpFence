@@ -47,7 +47,8 @@ class CoreLocationManager: NSObject {
     
     private func locationList(){
         //Fetch all locations from DB. All the locations should be mapped to Location model
-        locations = DataWrapper.locationModels()
+//        locations = DataWrapper.locationModels()
+        locations = DataWrapper().tempLocationModels()
     }
     
     private func trackUserLocation()  {
@@ -103,7 +104,7 @@ extension CoreLocationManager: CLLocationManagerDelegate{
             }else{
                 //Unexpected. At the time of entry, there should not be any current region ID
         }
-        stateObject?.objectStateAray.append(StateModel(state: .green, time: NSDate.init(), regionId: region.identifier, coordinate: manager.location?.coordinate))
+        stateObject?.objectStateAray.append(StateModel(state: .green, time: DateFormatter().string(from: Date()), regionId: region.identifier, coordinate: manager.location?.coordinate))
         stateObject?.onGreen(forRegion: region.identifier)
     }
     
@@ -114,7 +115,7 @@ extension CoreLocationManager: CLLocationManagerDelegate{
             stateObject?.currentRegionId = region.identifier
             stateObject?.currentState = .white
         }
-        stateObject?.objectStateAray.append(StateModel(state: .white, time: NSDate.init(), regionId: region.identifier, coordinate: manager.location?.coordinate))
+        stateObject?.objectStateAray.append(StateModel(state: .white, time: DateFormatter().string(from: Date()), regionId: region.identifier, coordinate: manager.location?.coordinate))
         stateObject?.onWhite(fromRegion: region.identifier)
     }
 }
