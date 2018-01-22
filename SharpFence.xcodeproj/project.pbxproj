@@ -296,7 +296,7 @@
 				TargetAttributes = {
 					AF227AD5200CF8F300F99DD0 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = SPWD97H6WN;
+						DevelopmentTeam = 937DQK46D3;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -540,10 +540,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SPWD97H6WN;
+				DEVELOPMENT_TEAM = 937DQK46D3;
 				INFOPLIST_FILE = SharpFence/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rvs.SharpFence;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rvs.SharpFenceRVS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -553,10 +553,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SPWD97H6WN;
+				DEVELOPMENT_TEAM = 937DQK46D3;
 				INFOPLIST_FILE = SharpFence/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rvs.SharpFence;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rvs.SharpFenceRVS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
