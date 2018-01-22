@@ -16,7 +16,7 @@ class FileManagerWrapper: NSObject {
         print("FilePath: \(fileURL.path)")
     do {
             // Write to the file
-            try content.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+            try content.write(to: fileURL, atomically: false, encoding: .utf8)
         } catch let error as NSError {
             print("Failed writing to URL: \(fileURL), Error: " + error.localizedDescription)
         }

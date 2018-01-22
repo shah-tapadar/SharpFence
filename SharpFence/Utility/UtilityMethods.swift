@@ -18,6 +18,12 @@ class UtilityMethods {
         
         controller.present(alertController, animated: true, completion: nil)
     }
+    
+    static func getCurrentDateString() -> String?{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM-dd-yyyy  hh:mm:ss a"
+        return dateFormatter.string(from: Date())
+    }
 }
 
 extension UIViewController {
