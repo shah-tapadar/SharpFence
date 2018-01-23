@@ -26,9 +26,7 @@ class CoreLocationManager: NSObject {
             case .notDetermined:
                 clLocationManagerObject.requestAlwaysAuthorization()
             case .authorizedAlways:
-                locationList()
-                trackUserLocation()
-                startTrackingGeofencedRegion()
+                startMonitoring()
                 break
             case .denied,.restricted:
                 break
@@ -38,6 +36,12 @@ class CoreLocationManager: NSObject {
         } else {
             //executes when device location services is disabled
         }
+    }
+    
+    func startMonitoring() {
+        locationList()
+        trackUserLocation()
+        startTrackingGeofencedRegion()
     }
     
     func stopLocationMonitoring() {
@@ -96,7 +100,6 @@ class CoreLocationManager: NSObject {
     }
 }
 
-
 extension CoreLocationManager: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion){
         
@@ -123,5 +126,19 @@ extension CoreLocationManager: CLLocationManagerDelegate{
         
         ObjectStateWrapper.sharedObjectStateWrapper.changeState(fenceEvent: fenceEvent, deviceEvent: deviceEvent)
 }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus){
+        switch status {
+        case .notDetermined:
+            break
+        case .authorizedAlways:
+            startMonitoring()
+            break
+        case .denied,.restricted:
+            break
+        default:
+            break
+        }
+    }
 
 }
