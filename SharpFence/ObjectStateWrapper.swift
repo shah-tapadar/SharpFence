@@ -19,7 +19,7 @@ class ObjectStateWrapper: NSObject {
         currentState = WhiteObjectState()
         }
 
-    static let sharedObjectStateWrapper = ObjectStateWrapper()
+    static let sharedObjectStateWrapper = ObjectStateWrapper.init()
 
  
     func setState(state: AbstractObjectState) {
@@ -30,16 +30,5 @@ class ObjectStateWrapper: NSObject {
         currentState?.processChangeState(wrapper: self, fenceEvent: fenceEvent, deviceEvent: deviceEvent)
     }
     
-    // To be reviewed
-    func callDBToAddState(fenceEvent:FenceEventModel, state:objectState?){
-        
-        var location:CLLocationCoordinate2D?
-        
-        if let lat = fenceEvent.latitude, let long = fenceEvent.longitude {
-            location = CLLocationCoordinate2D.init(latitude: lat, longitude: long)
-        } else {
-            location = CLLocationCoordinate2D.init()
-        }
-        CoreDataWrapper.addStateToDB(state: StateModel.init(state: state, time: DateFormatter().string(from: Date()), regionId:fenceEvent.identifier, coordinate:location))
-    }
+   
 }

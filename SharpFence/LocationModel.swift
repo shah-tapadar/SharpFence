@@ -14,6 +14,7 @@ class LocationModel: NSObject {
     var latitude: Double?
     var longitude: Double?
     var radius: Double?
+    var status: Bool?
     
     init(dbModel: TBL_GF_CONFIG) {
         super.init()
@@ -21,6 +22,7 @@ class LocationModel: NSObject {
         latitude = dbModel.centerLatitude
         longitude = dbModel.centerLongitude
         radius = dbModel.radius
+        status = dbModel.status
     }
     
     override init() {

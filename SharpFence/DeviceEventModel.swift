@@ -20,4 +20,8 @@ enum deviceEventType {
 
 class DeviceEventModel {
     var event: deviceEventType?
+    
+    init(event: deviceEventType){
+        self.event = event
+    }
 }

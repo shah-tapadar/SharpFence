@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsTableViewCell: UITableViewCell {
+class SettingsTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,4 +26,6 @@ class SettingsTableViewCell: UITableViewCell {
     @IBOutlet weak var longitudeTextField: UITextField!
 
     @IBOutlet weak var radiusTextField: UITextField!
+    
+    
 }

@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     var valueToPassLabel: String?
     var tripEvents :[TBL_TRIP_EVENT]?
     lazy var logManager = LogManager()
-    var stateObject: StateObjectModel?
+    var stateObject:  AbstractObjectState? //StateObjectModel?
     lazy var locationManager = CoreLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        tripEvents = CoreDataWrapper.fetchAllTripEvents()
+        self.routeSummaryTableView.reloadData()
     }
 
     
@@ -55,17 +56,17 @@ class HomeViewController: UIViewController {
     @IBAction func startDriving(_ sender: Any) {
         let switchButton = sender as! UISwitch
         if switchButton.isOn {
-            stateObject = StateObjectModel()
-            locationManager.setupLocationManager(stateObject: stateObject, locationAccuracy: kCLLocationAccuracyBest)
+            locationManager.setupLocationManager(locationAccuracy: kCLLocationAccuracyBest)
         }else{
             locationManager.stopLocationMonitoring()
-            CoreDataWrapper.saveMonitoredRegionsAndStatus(objectModel: stateObject!)
+             self.routeSummaryTableView.reloadData()
+            //CoreDataWrapper.saveMonitoredRegionsAndStatus(objectModel: stateObject!)
         }
     }
     
 
     @IBAction func flushData(_ sender: Any) {
-        CoreDataWrapper.flushData()
+        CoreDataWrapper.flushData(table: "TBL_TRIP_EVENT")
     }
     
     

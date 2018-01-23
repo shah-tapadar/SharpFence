@@ -15,12 +15,13 @@ enum fenceEventType {
 
 class FenceEventModel {
     
-    init(location: LocationModel, event:fenceEventType?, distance: Double?){
+    init(location: LocationModel, event:fenceEventType?, distance: Double?, timeStamp: String?){
         self.identifier = location.identifier
         self.latitude = location.latitude
         self.longitude = location.longitude
         self.event = event
         self.distance = distance
+        self.timeStamp = String(describing: timeStamp)
         }
     
     var event: fenceEventType?
@@ -28,6 +29,7 @@ class FenceEventModel {
     var latitude: Double?
     var longitude: Double?
     var distance: Double?
+    var timeStamp : String?
 	
  
 	

@@ -11,14 +11,14 @@ import CoreLocation
 
 class CoreLocationManager: NSObject {
     let clLocationManagerObject = CLLocationManager()
-    var stateObject: StateObjectModel?
+   // var stateObject: AbstractObjectState?
     var selectedAccuracyLevel: CLLocationAccuracy?
     var locations: [LocationModel]?
     var monitoredRegions: [CLCircularRegion]?
     
-    func setupLocationManager(stateObject: StateObjectModel?, locationAccuracy: CLLocationAccuracy?) {
+    func setupLocationManager(locationAccuracy: CLLocationAccuracy?) {
         clLocationManagerObject.delegate = self
-        self.stateObject = stateObject
+       // self.stateObject = stateObject
         selectedAccuracyLevel = locationAccuracy
         if CLLocationManager.locationServicesEnabled() {
             //handles different cases of app's location services status
@@ -47,8 +47,8 @@ class CoreLocationManager: NSObject {
     
     private func locationList(){
         //Fetch all locations from DB. All the locations should be mapped to Location model
-//        locations = DataWrapper.locationModels()
-        locations = DataWrapper().tempLocationModels()
+       locations = DataWrapper.locationModels()
+  //      locations = DataWrapper().tempLocationModels()
     }
     
     private func trackUserLocation()  {
@@ -96,27 +96,32 @@ class CoreLocationManager: NSObject {
     }
 }
 
+
 extension CoreLocationManager: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion){
-            if stateObject?.currentRegionId == nil{
-                stateObject?.currentRegionId = region.identifier
-                stateObject?.currentState = .green
-            }else{
-                //Unexpected. At the time of entry, there should not be any current region ID
+        
+        let deviceEvent = DeviceEventModel.init(event: .deviceOnMove)
+        let locationModel = LocationModel.init()
+        locationModel.latitude = manager.location?.coordinate.latitude
+        locationModel.longitude = manager.location?.coordinate.longitude
+        locationModel.identifier = region.identifier
+        
+        let fenceEvent = FenceEventModel.init(location: locationModel, event: fenceEventType.entry, distance: 100, timeStamp: UtilityMethods.getCurrentDateString())
+        
+        ObjectStateWrapper.sharedObjectStateWrapper.changeState(fenceEvent: fenceEvent, deviceEvent: deviceEvent)
         }
-        stateObject?.objectStateAray.append(StateModel(state: .green, time: UtilityMethods.getCurrentDateString(), regionId: region.identifier, coordinate: manager.location?.coordinate))
-        stateObject?.onGreen(forRegion: region.identifier)
-    }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion){
-        if stateObject?.currentRegionId == nil{
-            //Unexpected. At the time of exit, there should be any current region ID
-        }else{
-            stateObject?.currentRegionId = region.identifier
-            stateObject?.currentState = .white
-        }
-        stateObject?.objectStateAray.append(StateModel(state: .white, time: UtilityMethods.getCurrentDateString(), regionId: region.identifier, coordinate: manager.location?.coordinate))
-        stateObject?.onWhite(fromRegion: region.identifier)
-    }
+        
+        let deviceEvent = DeviceEventModel.init(event: .deviceOnMove)
+        let locationModel = LocationModel.init()
+        locationModel.latitude = manager.location?.coordinate.latitude
+        locationModel.longitude = manager.location?.coordinate.longitude
+        locationModel.identifier = region.identifier
+        
+        let fenceEvent = FenceEventModel.init(location: locationModel, event: fenceEventType.exit, distance: 100, timeStamp: UtilityMethods.getCurrentDateString())
+        
+        ObjectStateWrapper.sharedObjectStateWrapper.changeState(fenceEvent: fenceEvent, deviceEvent: deviceEvent)
 }
 
+}

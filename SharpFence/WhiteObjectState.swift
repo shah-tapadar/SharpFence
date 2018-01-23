@@ -38,18 +38,14 @@ class WhiteObjectState:  AbstractObjectState{
 		skippedState.processChangeState(wrapper: wrapper, fenceEvent: fenceEvent, deviceEvent: deviceEvent)
 		//DB UTIL
         //Save ExEvent
-         ObjectStateWrapper.sharedObjectStateWrapper.callDBToAddState(fenceEvent: fenceEvent, state: .white)
-        
-        ObjectStateWrapper.sharedObjectStateWrapper.callDBToAddState(fenceEvent: fenceEvent, state: .white)
-        
-        
-		
+        CoreDataWrapper.addFenceEventToDB(stateObject: self, event: fenceEvent)
         wrapper.setState(state: WhiteObjectState())
 	}
 	
     private func processEntry(wrapper:ObjectStateWrapper,fenceEvent:FenceEventModel ){
 		//DB UTIL
 		//Save Entry Event
+        CoreDataWrapper.addFenceEventToDB(stateObject: self, event: fenceEvent)
 		wrapper.setState(state: GreenObjectState())
 
 	}

@@ -15,22 +15,22 @@ enum objectState: String {
     case red
 }
 
-class StateObjectModel: NSObject {
-    var currentState: objectState
-    var currentRegionId: String?
-    var objectIdentifier: String?
-    var objectStateAray = [StateModel]()
-    
-    override init() {
-        currentState = .white
-        super.init()
-    }
-    
-    func onGreen(forRegion regionId: String){
-        
-    }
-    
-    func onWhite(fromRegion regionId: String){
-        
-    }
-}
+//class StateObjectModel: NSObject {
+//    var currentState: objectState
+//    var currentRegionId: String?
+//    var objectIdentifier: String?
+//    var objectStateAray = [StateModel]()
+//    
+//    override init() {
+//        currentState = .white
+//        super.init()
+//    }
+//    
+//    func onGreen(forRegion regionId: String){
+//        
+//    }
+//    
+//    func onWhite(fromRegion regionId: String){
+//        
+//    }
+//}

@@ -12,8 +12,8 @@ import CoreData
 class SettingsUIViewController: UIViewController {
 
     let reuseIdentifier = "settingsCell"
-    var boundaries: [GFDetails] = []
-    
+    var boundaries: [LocationModel] = []
+   //var originalBoundaries: [LocationModel] = []
     
     
     override func viewDidLoad() {
@@ -22,12 +22,17 @@ class SettingsUIViewController: UIViewController {
        self.settingsTableView.delegate = self
        self.hideKeyboardWhenTappedAround()
         
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       // boundaries = CoreDataWrapper.fetchGF() as! [GFDetails]
+        if let data = DataWrapper.locationModels() {
+          boundaries = data
+//            originalBoundaries = data  //.map{$0.identifier ?? ""}
+        }
+        
     }
 
     @IBOutlet weak var settingsTableView: UITableView!
@@ -46,14 +51,22 @@ class SettingsUIViewController: UIViewController {
     
     @IBAction func savePressed(_ sender: Any) {
         
-     
-//        for index in 0...boundaries.count {
-//            let cell = self.settingsTableView.dequeueReusableCell(withIdentifier: reuseIdentifier)! as! SettingsTableViewCell
-//            boundaries[index].centerLatitude = Double(cell.latitudeTextField.text ?? "0.0")!
-//            boundaries[index].centerLongitude = Double(cell.latitudeTextField.text ?? "0.0")!
-//            boundaries[index].radius = Double(cell.radiusTextField.text ?? "0.0")!
-//            CoreDataWrapper.saveGFToDB(dataModel: boundaries[index])
-//        }
+         CoreDataWrapper.flushData(table: "TBL_GF_CONFIG")
+        
+        
+        for index in 0..<boundaries.count {
+            let indexPath = IndexPath(row: index, section: 0)
+            
+            if let cell = settingsTableView.cellForRow(at: indexPath) as! SettingsTableViewCell? {
+                boundaries[index].latitude = Double(cell.latitudeTextField.text!) ?? 0.0
+                boundaries[index].longitude = Double(cell.longitudeTextField.text!) ?? 0.0
+                boundaries[index].radius = Double(cell.radiusTextField.text!) ?? 0.0
+                boundaries[index].status = true
+                // Using Time Stamp as unique ID
+                boundaries[index].identifier = UtilityMethods.getCurrentDateString()
+                CoreDataWrapper.saveGFToDB(dataModel: boundaries[index])
+            }
+        }
         
     }
     
@@ -62,10 +75,10 @@ class SettingsUIViewController: UIViewController {
     
     @IBAction func addNew(_ sender: Any) {
         settingsTableView.beginUpdates()
-       
         settingsTableView.insertRows(at: [IndexPath(row: boundaries.count, section: 0)], with: .automatic)
-         self.boundaries.append(GFDetails.init())
+         self.boundaries.append(LocationModel.init())
         settingsTableView.endUpdates()
+       
     }
     
     
@@ -87,6 +100,11 @@ extension SettingsUIViewController : UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.settingsTableView.dequeueReusableCell(withIdentifier: reuseIdentifier)! as! SettingsTableViewCell
+        
+      cell.latitudeTextField.text = String(describing: boundaries[indexPath.row].latitude)
+      cell.longitudeTextField.text = String(describing: boundaries[indexPath.row].longitude)
+      cell.radiusTextField.text = String(describing: boundaries[indexPath.row].radius)
+
         return cell
     }
     
@@ -101,6 +119,8 @@ extension SettingsUIViewController : UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             self.boundaries.remove(at: indexPath.row)
+            // neeed to call DB to delete it
+            
             self.settingsTableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
