@@ -11,10 +11,7 @@ import UIKit
 class RouteSummaryTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var tilteLabel: UILabel!
-    
-    
-    @IBOutlet weak var timeStampLabel: UILabel!
+     
     
     
 

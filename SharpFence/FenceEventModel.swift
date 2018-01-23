@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum fenceEventType {
+enum fenceEventType: String {
     case entry
     case exit
 }
@@ -21,7 +21,7 @@ class FenceEventModel {
         self.longitude = location.longitude
         self.event = event
         self.distance = distance
-        self.timeStamp = String(describing: timeStamp)
+        self.timeStamp = timeStamp ?? ""
         }
     
     var event: fenceEventType?

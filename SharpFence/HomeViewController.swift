@@ -56,7 +56,7 @@ class HomeViewController: UIViewController {
     @IBAction func startDriving(_ sender: Any) {
         let switchButton = sender as! UISwitch
         if switchButton.isOn {
-            locationManager.setupLocationManager(locationAccuracy: kCLLocationAccuracyBest)
+            locationManager.setupLocationManager(locationAccuracy: CoreDataWrapper.getConfigAccuracy()?.accuracy)
         }else{
             locationManager.stopLocationMonitoring()
              self.routeSummaryTableView.reloadData()
@@ -67,7 +67,9 @@ class HomeViewController: UIViewController {
 
     @IBAction func flushData(_ sender: Any) {
         CoreDataWrapper.flushData(table: "TBL_TRIP_EVENT")
-    }
+        self.tripEvents = []
+        self.routeSummaryTableView.reloadData()
+     }
     
     
     @IBAction func emailData(_ sender: Any) {
@@ -94,9 +96,22 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = self.routeSummaryTableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as! RouteSummaryTableViewCell
         
        let tripEvent = tripEvents![indexPath.row]
-      if let eventId =  tripEvent.value(forKeyPath: "eventId"), let eventType = tripEvent.value(forKeyPath: "eventType"), let timeStamp = tripEvent.value(forKeyPath: "timeStamp") {
-        cell.tilteLabel.text = String(describing: eventId) + " " + String(describing: eventType)
-        cell.timeStampLabel.text = String(describing: timeStamp)
+        
+        
+        
+       
+      if let eventId =  tripEvent.eventId, let eventType = tripEvent.eventType, let timeStamp = tripEvent.timeStamp {
+        
+        if (eventType == "entry") {
+         cell.textLabel?.textColor = .green
+         cell.textLabel?.text = eventId + "  " + "Entry"
+        } else {
+           cell.textLabel?.textColor = .red
+            cell.textLabel?.text = eventId + "  " + "Exit"
+        }
+        cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
+        cell.detailTextLabel?.text = timeStamp
+        cell.detailTextLabel?.textColor = UIColor.gray
         
         }
         
@@ -111,13 +126,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let indexPath = tableView.indexPathForSelectedRow!
         let currentCell = tableView.cellForRow(at: indexPath) as! RouteSummaryTableViewCell
         
-        self.valueToPassLabel = currentCell.tilteLabel.text
+        self.valueToPassLabel = currentCell.textLabel?.text
         let tripEvent = tripEvents![indexPath.row]
         
-        if let geoId =  tripEvent.value(forKeyPath: "geoFenceId"), let time = tripEvent.value(forKeyPath: "timeStamp"), let latititude = tripEvent.value(forKeyPath: "eventLat"), let longitude = tripEvent.value(forKeyPath: "eventLong"), let distance = tripEvent.value(forKeyPath: "distance")  {
+        if let geoId =  tripEvent.value(forKeyPath: "geoFenceId"), let time = tripEvent.timeStamp, let latititude = tripEvent.value(forKeyPath: "eventLat"), let longitude = tripEvent.value(forKeyPath: "eventLong"), let distance = tripEvent.value(forKeyPath: "distance")  {
+            
             self.valueToPass = RouteDetails(
                 gfID: String(describing: geoId),
-                time:  String(describing: time),
+                time: time,
                 latitude: String(describing: latititude),
                 longitude: String(describing: longitude),
                 distanceFromCenter:String(describing: distance)

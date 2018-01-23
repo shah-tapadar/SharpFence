@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import CoreLocation
 
 class CoreDataWrapper {
     
@@ -30,9 +31,10 @@ class CoreDataWrapper {
         let tripEvent = TBL_TRIP_EVENT.init(entity: TBL_TRIP_EVENT.entity(), insertInto: managedContext)
         tripEvent.eventLat = event.latitude ?? 0.0
         tripEvent.eventLong = event.longitude ?? 0.0
-        tripEvent.eventType =  String(describing: event.event)
+        tripEvent.eventType =  event.event?.rawValue
         tripEvent.geoFenceId =  event.identifier
-        tripEvent.timeStamp =  event.timeStamp
+        tripEvent.timeStamp =  event.timeStamp ?? ""
+        tripEvent.eventId = "GF" + " " + "\(arc4random_uniform(100))"
         do {
             try managedContext?.save()
         } catch {
@@ -52,6 +54,49 @@ class CoreDataWrapper {
         } catch  {
             return nil
         }
+    }
+    
+    static func fetchConfigAccuracy() -> [TBL_AL_CONFIG]?{
+        let managedContext = CoreDataWrapper.context()
+        let fetchRequest: NSFetchRequest<TBL_AL_CONFIG> = TBL_AL_CONFIG.fetchRequest()
+        do {
+            return try  managedContext?.fetch(fetchRequest)
+            
+        } catch  {
+            return nil
+        }
+    }
+    
+    static func getConfigAccuracy() -> AccuracyDataModel?{
+        var accuracy = AccuracyDataModel()
+        var data = self.fetchConfigAccuracy()
+          accuracy.disFilter =  data?[0].disFilter
+        accuracy.headFilter =  data?[0].headFilter
+        accuracy.level =  data?[0].level
+                 
+ 
+        switch accuracy.level ?? ""{
+        case "LEVEL 1":
+            accuracy.accuracy =  kCLLocationAccuracyBestForNavigation
+            break
+            
+        case "LEVEL 2":
+            accuracy.accuracy =  kCLLocationAccuracyBest
+            break
+            
+        case "LEVEL 3":
+            accuracy.accuracy =  kCLLocationAccuracyNearestTenMeters
+            break
+            
+        default:
+            accuracy.accuracy =  kCLLocationAccuracyBest
+            break
+        
+        }
+        
+        
+        return accuracy
+        
     }
     
     static func saveAccuracyToDB(dataModel :AccuracyDataModel) {
@@ -84,6 +129,25 @@ class CoreDataWrapper {
         }
     }
     
+    static func deleteGeoFence(id: String){
+        let managedContext = CoreDataWrapper.context()
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "TBL_GF_CONFIG")
+        let predicate = NSPredicate(format: "geoFenceId = %@", id)
+        fetchRequest.predicate = predicate
+        
+        
+        do {
+            if let object = try managedContext?.fetch(fetchRequest)[0] {
+                // if there is exception or there is no value
+                  managedContext?.delete(object)
+            }
+           
+        } catch let error as NSError {
+            debugPrint(error)
+        }
+
+    }
     
     static func fetchAllTripEvents() -> [TBL_TRIP_EVENT]?{
         let managedContext = CoreDataWrapper.context()

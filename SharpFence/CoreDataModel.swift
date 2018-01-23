@@ -7,16 +7,17 @@
 //
 
 import Foundation
-
+import CoreLocation
 
 struct AccuracyDataModel {
 
     var disFilter: Double?
     var headFilter: Double?
     var level: String?
-     
-
+    var accuracy: CLLocationAccuracy?
 }
+
+
 
 struct RouteDetails {
     
@@ -36,5 +37,10 @@ struct GFDetails {
     var centerLongitude: Double?
     var radius: Double?
 
-
 }
+
+
+
+ 
+
+

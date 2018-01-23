@@ -24,6 +24,12 @@ class UtilityMethods {
         dateFormatter.dateFormat = "MMM-dd-yyyy  hh:mm:ss a"
         return dateFormatter.string(from: Date())
     }
+    
+    static func getTimeString(date: Date) -> String?{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm:ss a"
+        return dateFormatter.string(from: date)
+    }
 }
 
 extension UIViewController {

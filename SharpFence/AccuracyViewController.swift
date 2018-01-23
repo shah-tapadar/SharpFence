@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
 class AccuracyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
@@ -74,9 +75,35 @@ class AccuracyViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func saveClicked(_ sender: Any) {
-        CoreDataWrapper.saveAccuracyToDB(dataModel: AccuracyDataModel(disFilter: Double(self.distanceFilter.text ?? "0.0") , headFilter: Double(self.headingFilter.text ?? "0.0") , level: self.accuracyLevel.text))
+        
+        var accuracy: CLLocationAccuracy?
+        
+        switch self.accuracyLevel.text ?? "" {
+            
+        case "LEVEL 1":
+            accuracy =  kCLLocationAccuracyBestForNavigation
+            break
+            
+        case "LEVEL 2":
+            accuracy =  kCLLocationAccuracyBest
+            break
+            
+        case "LEVEL 3":
+            accuracy =  kCLLocationAccuracyNearestTenMeters
+            break
+            
+        default:
+            accuracy =  kCLLocationAccuracyBest
+            break
+            
+        }
+
+         
+        CoreDataWrapper.saveAccuracyToDB(dataModel: AccuracyDataModel(disFilter: Double(self.distanceFilter.text ?? "0.0") , headFilter: Double(self.headingFilter.text ?? "0.0") , level: self.accuracyLevel.text, accuracy: accuracy))
+
     }
     
+        
     
     
     

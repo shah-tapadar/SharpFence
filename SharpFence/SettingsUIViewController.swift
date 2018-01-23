@@ -21,17 +21,15 @@ class SettingsUIViewController: UIViewController {
        self.settingsTableView.dataSource = self
        self.settingsTableView.delegate = self
        self.hideKeyboardWhenTappedAround()
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let data = DataWrapper.locationModels() {
           boundaries = data
-//            originalBoundaries = data  //.map{$0.identifier ?? ""}
-        }
+            
+         }
+        self.settingsTableView.reloadData()
         
     }
 
@@ -47,41 +45,6 @@ class SettingsUIViewController: UIViewController {
     @IBAction func backAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    @IBAction func savePressed(_ sender: Any) {
-        
-         CoreDataWrapper.flushData(table: "TBL_GF_CONFIG")
-        
-        
-        for index in 0..<boundaries.count {
-            let indexPath = IndexPath(row: index, section: 0)
-            
-            if let cell = settingsTableView.cellForRow(at: indexPath) as! SettingsTableViewCell? {
-                boundaries[index].latitude = Double(cell.latitudeTextField.text!) ?? 0.0
-                boundaries[index].longitude = Double(cell.longitudeTextField.text!) ?? 0.0
-                boundaries[index].radius = Double(cell.radiusTextField.text!) ?? 0.0
-                boundaries[index].status = true
-                // Using Time Stamp as unique ID
-                boundaries[index].identifier = UtilityMethods.getCurrentDateString()
-                CoreDataWrapper.saveGFToDB(dataModel: boundaries[index])
-            }
-        }
-        
-    }
-    
-    
-    
-    
-    @IBAction func addNew(_ sender: Any) {
-        settingsTableView.beginUpdates()
-        settingsTableView.insertRows(at: [IndexPath(row: boundaries.count, section: 0)], with: .automatic)
-         self.boundaries.append(LocationModel.init())
-        settingsTableView.endUpdates()
-       
-    }
-    
-    
     
 }
 
@@ -101,9 +64,13 @@ extension SettingsUIViewController : UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.settingsTableView.dequeueReusableCell(withIdentifier: reuseIdentifier)! as! SettingsTableViewCell
         
-      cell.latitudeTextField.text = String(describing: boundaries[indexPath.row].latitude)
-      cell.longitudeTextField.text = String(describing: boundaries[indexPath.row].longitude)
-      cell.radiusTextField.text = String(describing: boundaries[indexPath.row].radius)
+        if let latitude = boundaries[indexPath.row].latitude, let longitude = boundaries[indexPath.row].longitude, let radius = boundaries[indexPath.row].radius {
+            cell.latitudeTextField.text = String(describing: latitude )
+            cell.longitudeTextField.text = String(describing: longitude )
+            cell.radiusTextField.text = String(describing: radius )
+        }
+        
+      
 
         return cell
     }
@@ -118,9 +85,10 @@ extension SettingsUIViewController : UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.boundaries.remove(at: indexPath.row)
-            // neeed to call DB to delete it
             
+            // neeed to call DB to delete it
+            CoreDataWrapper.deleteGeoFence(id: self.boundaries[indexPath.row].identifier ?? "")
+            self.boundaries.remove(at: indexPath.row)
             self.settingsTableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }

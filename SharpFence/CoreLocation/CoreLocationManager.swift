@@ -52,7 +52,7 @@ class CoreLocationManager: NSObject {
     private func locationList(){
         //Fetch all locations from DB. All the locations should be mapped to Location model
        locations = DataWrapper.locationModels()
-  //      locations = DataWrapper().tempLocationModels()
+       //locations = DataWrapper().tempLocationModels()
     }
     
     private func trackUserLocation()  {
