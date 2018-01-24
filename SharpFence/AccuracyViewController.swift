@@ -13,6 +13,7 @@ import CoreLocation
 class AccuracyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     var list = ["LEVEL 1", "LEVEL 2", "LEVEL 3"]
+    var accuracy: AccuracyDataModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class AccuracyViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         self.dropDown.isHidden = true
         self.hideKeyboardWhenTappedAround()
         self.accuracyLevel.delegate = self
+       
         // Do any additional setup after loading the view.
     }
 
@@ -31,6 +33,21 @@ class AccuracyViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBAction func backAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.accuracy = CoreDataWrapper.getConfigAccuracy()
+        
+        if let level = accuracy?.level, let distance = accuracy?.disFilter, let heading = accuracy?.headFilter {
+            
+            self.accuracyLevel.text = level
+            self.distanceFilter.text = String(distance)
+            self.headingFilter.text = String(heading)
+        
+        }
+        
+    }
+
     
     
     @IBOutlet weak var accuracyLevel: UITextField!
@@ -75,7 +92,6 @@ class AccuracyViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func saveClicked(_ sender: Any) {
-        
         var accuracy: CLLocationAccuracy?
         
         switch self.accuracyLevel.text ?? "" {
@@ -97,9 +113,11 @@ class AccuracyViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             break
             
         }
-
-         
+        
+       
+        
         CoreDataWrapper.saveAccuracyToDB(dataModel: AccuracyDataModel(disFilter: Double(self.distanceFilter.text ?? "0.0") , headFilter: Double(self.headingFilter.text ?? "0.0") , level: self.accuracyLevel.text, accuracy: accuracy))
+        self.dismiss(animated: true, completion: nil)
 
     }
     

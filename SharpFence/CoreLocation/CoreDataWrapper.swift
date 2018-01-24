@@ -13,11 +13,7 @@ import CoreLocation
 
 class CoreDataWrapper {
     
-//    static func saveMonitoredRegionsAndStatus(objectModel: AbstractObjectState) {
-//        for state in objectModel.objectStateAray{
-//            addStateToDB(state: state)
-//        }
-//    }
+ 
     
     private static func context() -> NSManagedObjectContext?{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -69,10 +65,15 @@ class CoreDataWrapper {
     
     static func getConfigAccuracy() -> AccuracyDataModel?{
         var accuracy = AccuracyDataModel()
-        var data = self.fetchConfigAccuracy()
-          accuracy.disFilter =  data?[0].disFilter
-        accuracy.headFilter =  data?[0].headFilter
-        accuracy.level =  data?[0].level
+        var dataArray = self.fetchConfigAccuracy()
+        
+        guard dataArray?.count != 0 else {
+            return accuracy
+        }
+        
+        accuracy.disFilter =  dataArray?[0].disFilter
+        accuracy.headFilter =  dataArray?[0].headFilter
+        accuracy.level =  dataArray?[0].level
                  
  
         switch accuracy.level ?? ""{
@@ -102,13 +103,24 @@ class CoreDataWrapper {
     static func saveAccuracyToDB(dataModel :AccuracyDataModel) {
     
             let managedContext = CoreDataWrapper.context()
-            let entity = TBL_AL_CONFIG.init(entity: TBL_AL_CONFIG.entity(), insertInto: managedContext)
-              entity.disFilter = dataModel.disFilter ?? 0.0
-              entity.headFilter = dataModel.headFilter ?? 0.0
-              entity.level = dataModel.level ?? ""
+            let request = NSFetchRequest<TBL_AL_CONFIG>(entityName: "TBL_AL_CONFIG")
+        var entity:TBL_AL_CONFIG?
+        
         
         do {
-            try managedContext?.save()
+             let searchResults = try managedContext?.fetch(request)
+            
+            if searchResults?.count == 0 {
+             entity = TBL_AL_CONFIG.init(entity: TBL_AL_CONFIG.entity(), insertInto: managedContext)
+            } else {
+                entity = searchResults?[0]
+            }
+            
+            entity?.disFilter = dataModel.disFilter ?? 0.0
+            entity?.headFilter = dataModel.headFilter ?? 0.0
+            entity?.level = dataModel.level ?? ""
+            try  managedContext?.save()
+            
         } catch {
             print("Failed saving")
         }

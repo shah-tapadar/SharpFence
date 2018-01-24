@@ -10,10 +10,6 @@ import UIKit
 
 class RouteSummaryTableViewCell: UITableViewCell {
     
-    
-     
-    
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()

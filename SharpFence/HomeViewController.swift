@@ -10,7 +10,11 @@ import UIKit
 import CoreData
 import CoreLocation
 
-class HomeViewController: UIViewController {
+protocol ReloadHomeView {
+ func reLoadHomeView()
+}
+
+class HomeViewController: UIViewController, ReloadHomeView {
 
     
     let reuseIdentifier = "routeSummary"
@@ -19,19 +23,17 @@ class HomeViewController: UIViewController {
     var valueToPassLabel: String?
     var tripEvents :[TBL_TRIP_EVENT]?
     lazy var logManager = LogManager()
-    var stateObject:  AbstractObjectState? //StateObjectModel?
+    var stateObject:  AbstractObjectState?
     lazy var locationManager = CoreLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-//        CLLocationManager().requestAlwaysAuthorization()
-        self.routeSummaryTableView.dataSource = self
+         self.routeSummaryTableView.dataSource = self
         self.routeSummaryTableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       tripEvents = CoreDataWrapper.fetchAllTripEvents()
-        self.routeSummaryTableView.reloadData()
+        reLoadHomeView() 
     }
 
     
@@ -56,6 +58,7 @@ class HomeViewController: UIViewController {
     @IBAction func startDriving(_ sender: Any) {
         let switchButton = sender as! UISwitch
         if switchButton.isOn {
+            locationManager.delegate = self
             locationManager.setupLocationManager(locationAccuracy: CoreDataWrapper.getConfigAccuracy()?.accuracy)
         }else{
             locationManager.stopLocationMonitoring()
@@ -76,6 +79,14 @@ class HomeViewController: UIViewController {
         logManager.emailLog(presentMailComposeron: self)
     }
 
+    
+    // Protocol
+    func reLoadHomeView() {
+        tripEvents = []
+        tripEvents = CoreDataWrapper.fetchAllTripEvents()
+        self.routeSummaryTableView.reloadData()
+        
+    }
 }
 
 

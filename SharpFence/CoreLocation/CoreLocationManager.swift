@@ -15,6 +15,8 @@ class CoreLocationManager: NSObject {
     var selectedAccuracyLevel: CLLocationAccuracy?
     var locations: [LocationModel]?
     var monitoredRegions: [CLCircularRegion]?
+    var delegate:ReloadHomeView?
+    
     
     func setupLocationManager(locationAccuracy: CLLocationAccuracy?) {
         clLocationManagerObject.delegate = self
@@ -52,7 +54,7 @@ class CoreLocationManager: NSObject {
     private func locationList(){
         //Fetch all locations from DB. All the locations should be mapped to Location model
        locations = DataWrapper.locationModels()
-       //locations = DataWrapper().tempLocationModels()
+      // locations = DataWrapper().tempLocationModels()
     }
     
     private func trackUserLocation()  {
@@ -112,6 +114,8 @@ extension CoreLocationManager: CLLocationManagerDelegate{
         let fenceEvent = FenceEventModel.init(location: locationModel, event: fenceEventType.entry, distance: 100, timeStamp: UtilityMethods.getCurrentDateString())
         
         ObjectStateWrapper.sharedObjectStateWrapper.changeState(fenceEvent: fenceEvent, deviceEvent: deviceEvent)
+        
+        self.delegate?.reLoadHomeView()
         }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion){
@@ -125,6 +129,7 @@ extension CoreLocationManager: CLLocationManagerDelegate{
         let fenceEvent = FenceEventModel.init(location: locationModel, event: fenceEventType.exit, distance: 100, timeStamp: UtilityMethods.getCurrentDateString())
         
         ObjectStateWrapper.sharedObjectStateWrapper.changeState(fenceEvent: fenceEvent, deviceEvent: deviceEvent)
+          self.delegate?.reLoadHomeView()
 }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus){

@@ -129,14 +129,14 @@
                                                     <color key="backgroundColor" red="0.41218109679999998" green="0.61472083990000004" blue="0.77575846829999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BrA-i3-xRx">
-                                                    <rect key="frame" x="15" y="12" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OOW-6D-17e">
-                                                    <rect key="frame" x="284" y="12" width="44" height="21"/>
+                                                    <rect key="frame" x="284" y="12" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -846,6 +846,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveClicked:" destination="nCc-4B-iBy" eventType="touchUpInside" id="Cnj-4X-ixx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2901960784" green="0.43137254899999999" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -870,9 +873,8 @@
                             <constraint firstAttribute="trailing" secondItem="8qk-nC-bTz" secondAttribute="trailing" constant="16" id="Ybe-x2-DAI"/>
                             <constraint firstItem="7eI-H8-hfp" firstAttribute="top" secondItem="tQF-To-av6" secondAttribute="bottom" constant="8" id="YvH-Yk-cgS"/>
                             <constraint firstItem="jYO-sj-egm" firstAttribute="top" secondItem="m5e-0e-7PM" secondAttribute="bottom" id="dpI-dJ-KVR"/>
-                            <constraint firstItem="2zj-Ha-zLd" firstAttribute="top" secondItem="1mB-3G-kZZ" secondAttribute="bottom" constant="29.5" id="eIY-AS-CoO"/>
                             <constraint firstItem="tRV-y4-cAh" firstAttribute="top" secondItem="8qk-nC-bTz" secondAttribute="bottom" constant="32" id="fiK-9r-NOA"/>
-                            <constraint firstItem="m5e-0e-7PM" firstAttribute="top" secondItem="nXX-F9-NZn" secondAttribute="bottom" constant="16" id="fqj-rA-aKS"/>
+                            <constraint firstItem="2zj-Ha-zLd" firstAttribute="top" secondItem="1mB-3G-kZZ" secondAttribute="bottom" constant="29.5" id="jtq-po-IfE"/>
                             <constraint firstAttribute="trailing" secondItem="7eI-H8-hfp" secondAttribute="trailing" id="mrC-Sv-RnL"/>
                             <constraint firstAttribute="trailing" secondItem="2zj-Ha-zLd" secondAttribute="trailing" constant="16" id="oyB-rc-o6i"/>
                             <constraint firstItem="P9E-zz-Jxb" firstAttribute="centerY" secondItem="tRV-y4-cAh" secondAttribute="centerY" id="pqu-hV-wfh"/>
@@ -884,7 +886,7 @@
                     </view>
                     <connections>
                         <outlet property="accuracyLevel" destination="P9E-zz-Jxb" id="H6U-kU-JuZ"/>
-                        <outlet property="distanceFilter" destination="GEJ-Dm-owd" id="2C7-yi-s1T"/>
+                        <outlet property="distanceFilter" destination="fgb-MD-k9R" id="L61-t1-zZm"/>
                         <outlet property="dropDown" destination="m5e-0e-7PM" id="tBq-s5-VM7"/>
                         <outlet property="headingFilter" destination="GEJ-Dm-owd" id="gx6-I9-QHJ"/>
                     </connections>
