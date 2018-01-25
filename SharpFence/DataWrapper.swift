@@ -25,21 +25,21 @@ class DataWrapper {
         var locationModelArray = [LocationModel]()
         
         let location1 = LocationModel()
-        location1.identifier = "location1testfence"
+        location1.identifier = "GF 123"
         location1.latitude = 39.687382
         location1.longitude = -104.726521
         location1.radius = 100
         locationModelArray.append(location1)
         
         let location2 = LocationModel()
-        location2.identifier = "location2testfence"
+        location2.identifier = "GF 456"
         location2.latitude = 9.996158
         location2.longitude = 76.352945
         location2.radius = 100
         locationModelArray.append(location2)
         
         let location3 = LocationModel()
-        location3.identifier = "location3testfence"
+        location3.identifier = "GF 789"
         location3.latitude = 39.556296
         location3.longitude = -104.822191
         location3.radius = 100

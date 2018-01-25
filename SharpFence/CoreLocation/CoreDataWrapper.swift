@@ -30,6 +30,7 @@ class CoreDataWrapper {
         tripEvent.eventType =  event.event?.rawValue
         tripEvent.geoFenceId =  event.identifier
         tripEvent.timeStamp =  event.timeStamp ?? ""
+        tripEvent.distance = event.distance ?? 0.0
         tripEvent.eventId = "GF" + " " + "\(arc4random_uniform(100))"
         do {
             try managedContext?.save()

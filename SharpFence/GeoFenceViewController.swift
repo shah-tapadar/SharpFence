@@ -40,7 +40,7 @@ class GeoFenceViewController: UIViewController {
          gFModel.radius = Double(self.radiusTextField.text!) ?? 0.0
          gFModel.status = true
         // Using Time Stamp as unique ID - Replaced with Random number 
-        gFModel.identifier = "GFence " + "\(arc4random_uniform(10))" + "\(arc4random_uniform(10))" + "\(arc4random_uniform(10))"
+        gFModel.identifier = "GF" + "\(arc4random_uniform(10))" + "\(arc4random_uniform(10))" + "\(arc4random_uniform(10))"
         CoreDataWrapper.saveGFToDB(dataModel: gFModel )
         self.dismiss(animated: true, completion: nil)
     }

@@ -111,15 +111,16 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         
        
-      if let eventId =  tripEvent.eventId, let eventType = tripEvent.eventType, let timeStamp = tripEvent.timeStamp {
+      if let geoId =  tripEvent.geoFenceId, let eventType = tripEvent.eventType, let timeStamp = tripEvent.timeStamp {
         
         if (eventType == "entry") {
          cell.textLabel?.textColor = .green
-         cell.textLabel?.text = eventId + "  " + "Entry"
+         cell.textLabel?.text = geoId + "  " + "Entry"
         } else {
            cell.textLabel?.textColor = .red
-            cell.textLabel?.text = eventId + "  " + "Exit"
+            cell.textLabel?.text = geoId + "  " + "Exit"
         }
+       // cell.textLabel?.adjustsFontSizeToFitWidth = true
         cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
         cell.detailTextLabel?.text = timeStamp
         cell.detailTextLabel?.textColor = UIColor.gray
@@ -135,12 +136,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexPath = tableView.indexPathForSelectedRow!
-        let currentCell = tableView.cellForRow(at: indexPath) as! RouteSummaryTableViewCell
+       // let currentCell = tableView.cellForRow(at: indexPath) as! RouteSummaryTableViewCell
         
-        self.valueToPassLabel = currentCell.textLabel?.text
         let tripEvent = tripEvents![indexPath.row]
         
-        if let geoId =  tripEvent.value(forKeyPath: "geoFenceId"), let time = tripEvent.timeStamp, let latititude = tripEvent.value(forKeyPath: "eventLat"), let longitude = tripEvent.value(forKeyPath: "eventLong"), let distance = tripEvent.value(forKeyPath: "distance")  {
+        if let geoId =  tripEvent.value(forKeyPath: "geoFenceId"), let time = tripEvent.timeStamp, let latititude = tripEvent.value(forKeyPath: "eventLat"), let longitude = tripEvent.value(forKeyPath: "eventLong"), let distance = tripEvent.value(forKeyPath: "distance"),let eventId =  tripEvent.eventId, let eventType = tripEvent.eventType  {
+            
+             eventType == "entry" ? (self.valueToPassLabel = eventId + "  " + "Entry") :  (self.valueToPassLabel = eventId + "  " + "Exit")
             
             self.valueToPass = RouteDetails(
                 gfID: String(describing: geoId),
