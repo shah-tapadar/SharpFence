@@ -10,7 +10,6 @@
 		0192D624200E0ADA0020B62B /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D623200E0ADA0020B62B /* CoreLocationManager.swift */; };
 		0192D626200E0D760020B62B /* UtilityMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D625200E0D760020B62B /* UtilityMethods.swift */; };
 		0192D6412010C82E0020B62B /* CoreDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D6402010C82E0020B62B /* CoreDataWrapper.swift */; };
-		0192D644201219780020B62B /* DataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192D643201219780020B62B /* DataWrapper.swift */; };
 		01CD23DB2015AC59005F3065 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD23DA2015AC59005F3065 /* LogManager.swift */; };
 		01CD23DD2015ACE3005F3065 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD23DC2015ACE3005F3065 /* FileManager.swift */; };
 		01CD23E520161362005F3065 /* Jewell Ave Interchange-Appro.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 01CD23DF20161361005F3065 /* Jewell Ave Interchange-Appro.gpx */; };
@@ -33,15 +32,16 @@
 		AF941715200D6FB9000045D2 /* RouteDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */; };
 		AF941717200D98ED000045D2 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */; };
 		AF94171920100FE7000045D2 /* AccuracyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94171820100FE7000045D2 /* AccuracyViewController.swift */; };
-		AF9417262010FA5E000045D2 /* DeviceEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94171E2010FA5E000045D2 /* DeviceEventModel.swift */; };
-		AF9417272010FA5E000045D2 /* FenceEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94171F2010FA5E000045D2 /* FenceEventModel.swift */; };
-		AF9417282010FA5E000045D2 /* GreenObjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417202010FA5E000045D2 /* GreenObjectState.swift */; };
-		AF9417292010FA5E000045D2 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417212010FA5E000045D2 /* LocationModel.swift */; };
-		AF94172A2010FA5E000045D2 /* ObjectStateWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417222010FA5E000045D2 /* ObjectStateWrapper.swift */; };
-		AF94172B2010FA5E000045D2 /* WhiteObjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417232010FA5E000045D2 /* WhiteObjectState.swift */; };
 		AF9417362017A78A000045D2 /* GeoFenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417352017A78A000045D2 /* GeoFenceViewController.swift */; };
 		AFF116FD201BAB8900E0C2B3 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF116FC201BAB8900E0C2B3 /* CoreDataModel.swift */; };
 		AFF116FF201BABD900E0C2B3 /* AbstactObjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF116FE201BABD900E0C2B3 /* AbstactObjectState.swift */; };
+		AFF11707201BAC7F00E0C2B3 /* DataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF11700201BAC7F00E0C2B3 /* DataWrapper.swift */; };
+		AFF11708201BAC7F00E0C2B3 /* DeviceEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF11701201BAC7F00E0C2B3 /* DeviceEventModel.swift */; };
+		AFF11709201BAC7F00E0C2B3 /* FenceEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF11702201BAC7F00E0C2B3 /* FenceEventModel.swift */; };
+		AFF1170A201BAC7F00E0C2B3 /* GreenObjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF11703201BAC7F00E0C2B3 /* GreenObjectState.swift */; };
+		AFF1170B201BAC7F00E0C2B3 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF11704201BAC7F00E0C2B3 /* LocationModel.swift */; };
+		AFF1170C201BAC7F00E0C2B3 /* ObjectStateWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF11705201BAC7F00E0C2B3 /* ObjectStateWrapper.swift */; };
+		AFF1170D201BAC7F00E0C2B3 /* WhiteObjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF11706201BAC7F00E0C2B3 /* WhiteObjectState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +65,6 @@
 		0192D623200E0ADA0020B62B /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
 		0192D625200E0D760020B62B /* UtilityMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityMethods.swift; sourceTree = "<group>"; };
 		0192D6402010C82E0020B62B /* CoreDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWrapper.swift; sourceTree = "<group>"; };
-		0192D643201219780020B62B /* DataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataWrapper.swift; path = SharpFence/DataWrapper.swift; sourceTree = "<group>"; };
 		01CD23DA2015AC59005F3065 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		01CD23DC2015ACE3005F3065 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		01CD23DF20161361005F3065 /* Jewell Ave Interchange-Appro.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Jewell Ave Interchange-Appro.gpx"; sourceTree = "<group>"; };
@@ -94,15 +93,16 @@
 		AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailsTableViewController.swift; sourceTree = "<group>"; };
 		AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		AF94171820100FE7000045D2 /* AccuracyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccuracyViewController.swift; sourceTree = "<group>"; };
-		AF94171E2010FA5E000045D2 /* DeviceEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceEventModel.swift; path = SharpFence/DeviceEventModel.swift; sourceTree = "<group>"; };
-		AF94171F2010FA5E000045D2 /* FenceEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FenceEventModel.swift; path = SharpFence/FenceEventModel.swift; sourceTree = "<group>"; };
-		AF9417202010FA5E000045D2 /* GreenObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GreenObjectState.swift; path = SharpFence/GreenObjectState.swift; sourceTree = "<group>"; };
-		AF9417212010FA5E000045D2 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationModel.swift; path = SharpFence/LocationModel.swift; sourceTree = "<group>"; };
-		AF9417222010FA5E000045D2 /* ObjectStateWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObjectStateWrapper.swift; path = SharpFence/ObjectStateWrapper.swift; sourceTree = "<group>"; };
-		AF9417232010FA5E000045D2 /* WhiteObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WhiteObjectState.swift; path = SharpFence/WhiteObjectState.swift; sourceTree = "<group>"; };
 		AF9417352017A78A000045D2 /* GeoFenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoFenceViewController.swift; sourceTree = "<group>"; };
 		AFF116FC201BAB8900E0C2B3 /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		AFF116FE201BABD900E0C2B3 /* AbstactObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstactObjectState.swift; sourceTree = "<group>"; };
+		AFF11700201BAC7F00E0C2B3 /* DataWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWrapper.swift; sourceTree = "<group>"; };
+		AFF11701201BAC7F00E0C2B3 /* DeviceEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceEventModel.swift; sourceTree = "<group>"; };
+		AFF11702201BAC7F00E0C2B3 /* FenceEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FenceEventModel.swift; sourceTree = "<group>"; };
+		AFF11703201BAC7F00E0C2B3 /* GreenObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenObjectState.swift; sourceTree = "<group>"; };
+		AFF11704201BAC7F00E0C2B3 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		AFF11705201BAC7F00E0C2B3 /* ObjectStateWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectStateWrapper.swift; sourceTree = "<group>"; };
+		AFF11706201BAC7F00E0C2B3 /* WhiteObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteObjectState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,13 +223,13 @@
 			isa = PBXGroup;
 			children = (
 				AFF116FE201BABD900E0C2B3 /* AbstactObjectState.swift */,
-				AF94171E2010FA5E000045D2 /* DeviceEventModel.swift */,
-				AF94171F2010FA5E000045D2 /* FenceEventModel.swift */,
-				AF9417202010FA5E000045D2 /* GreenObjectState.swift */,
-				AF9417212010FA5E000045D2 /* LocationModel.swift */,
-				AF9417222010FA5E000045D2 /* ObjectStateWrapper.swift */,
-				AF9417232010FA5E000045D2 /* WhiteObjectState.swift */,
-				0192D643201219780020B62B /* DataWrapper.swift */,
+				AFF11700201BAC7F00E0C2B3 /* DataWrapper.swift */,
+				AFF11701201BAC7F00E0C2B3 /* DeviceEventModel.swift */,
+				AFF11702201BAC7F00E0C2B3 /* FenceEventModel.swift */,
+				AFF11703201BAC7F00E0C2B3 /* GreenObjectState.swift */,
+				AFF11704201BAC7F00E0C2B3 /* LocationModel.swift */,
+				AFF11705201BAC7F00E0C2B3 /* ObjectStateWrapper.swift */,
+				AFF11706201BAC7F00E0C2B3 /* WhiteObjectState.swift */,
 			);
 			path = LocationModels;
 			sourceTree = "<group>";
@@ -404,29 +404,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				01CD23DB2015AC59005F3065 /* LogManager.swift in Sources */,
-				AF9417262010FA5E000045D2 /* DeviceEventModel.swift in Sources */,
+				AFF11707201BAC7F00E0C2B3 /* DataWrapper.swift in Sources */,
 				AF227AE2200CF8F300F99DD0 /* SharpFence.xcdatamodeld in Sources */,
 				AF227ADC200CF8F300F99DD0 /* HomeViewController.swift in Sources */,
 				0192D624200E0ADA0020B62B /* CoreLocationManager.swift in Sources */,
+				AFF1170A201BAC7F00E0C2B3 /* GreenObjectState.swift in Sources */,
 				AFF116FF201BABD900E0C2B3 /* AbstactObjectState.swift in Sources */,
-				AF94172A2010FA5E000045D2 /* ObjectStateWrapper.swift in Sources */,
 				0192D626200E0D760020B62B /* UtilityMethods.swift in Sources */,
+				AFF11708201BAC7F00E0C2B3 /* DeviceEventModel.swift in Sources */,
 				AF941717200D98ED000045D2 /* SettingsTableViewCell.swift in Sources */,
+				AFF1170D201BAC7F00E0C2B3 /* WhiteObjectState.swift in Sources */,
 				01CD23DD2015ACE3005F3065 /* FileManager.swift in Sources */,
 				AF227ADA200CF8F300F99DD0 /* AppDelegate.swift in Sources */,
 				0192D6412010C82E0020B62B /* CoreDataWrapper.swift in Sources */,
+				AFF11709201BAC7F00E0C2B3 /* FenceEventModel.swift in Sources */,
 				AF941715200D6FB9000045D2 /* RouteDetailsTableViewController.swift in Sources */,
-				0192D644201219780020B62B /* DataWrapper.swift in Sources */,
 				AF94171920100FE7000045D2 /* AccuracyViewController.swift in Sources */,
+				AFF1170B201BAC7F00E0C2B3 /* LocationModel.swift in Sources */,
+				AFF1170C201BAC7F00E0C2B3 /* ObjectStateWrapper.swift in Sources */,
 				AF941713200D6613000045D2 /* SettingsUIViewController.swift in Sources */,
 				AF94170D200D5877000045D2 /* DetailViewController.swift in Sources */,
 				AF9417362017A78A000045D2 /* GeoFenceViewController.swift in Sources */,
 				AFF116FD201BAB8900E0C2B3 /* CoreDataModel.swift in Sources */,
-				AF94172B2010FA5E000045D2 /* WhiteObjectState.swift in Sources */,
 				AF94170F200D5893000045D2 /* RouteSummaryTableViewCell.swift in Sources */,
-				AF9417282010FA5E000045D2 /* GreenObjectState.swift in Sources */,
-				AF9417292010FA5E000045D2 /* LocationModel.swift in Sources */,
-				AF9417272010FA5E000045D2 /* FenceEventModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
