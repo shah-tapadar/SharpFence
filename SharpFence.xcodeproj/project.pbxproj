@@ -33,7 +33,6 @@
 		AF941717200D98ED000045D2 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */; };
 		AF94171920100FE7000045D2 /* AccuracyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94171820100FE7000045D2 /* AccuracyViewController.swift */; };
 		AF9417362017A78A000045D2 /* GeoFenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9417352017A78A000045D2 /* GeoFenceViewController.swift */; };
-		AFF116FD201BAB8900E0C2B3 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF116FC201BAB8900E0C2B3 /* CoreDataModel.swift */; };
 		AFF116FF201BABD900E0C2B3 /* AbstactObjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF116FE201BABD900E0C2B3 /* AbstactObjectState.swift */; };
 		AFF11707201BAC7F00E0C2B3 /* DataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF11700201BAC7F00E0C2B3 /* DataWrapper.swift */; };
 		AFF11708201BAC7F00E0C2B3 /* DeviceEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF11701201BAC7F00E0C2B3 /* DeviceEventModel.swift */; };
@@ -42,6 +41,7 @@
 		AFF1170B201BAC7F00E0C2B3 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF11704201BAC7F00E0C2B3 /* LocationModel.swift */; };
 		AFF1170C201BAC7F00E0C2B3 /* ObjectStateWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF11705201BAC7F00E0C2B3 /* ObjectStateWrapper.swift */; };
 		AFF1170D201BAC7F00E0C2B3 /* WhiteObjectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF11706201BAC7F00E0C2B3 /* WhiteObjectState.swift */; };
+		AFF1170F201BADED00E0C2B3 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1170E201BADED00E0C2B3 /* CoreDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +94,6 @@
 		AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		AF94171820100FE7000045D2 /* AccuracyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccuracyViewController.swift; sourceTree = "<group>"; };
 		AF9417352017A78A000045D2 /* GeoFenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoFenceViewController.swift; sourceTree = "<group>"; };
-		AFF116FC201BAB8900E0C2B3 /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		AFF116FE201BABD900E0C2B3 /* AbstactObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstactObjectState.swift; sourceTree = "<group>"; };
 		AFF11700201BAC7F00E0C2B3 /* DataWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataWrapper.swift; sourceTree = "<group>"; };
 		AFF11701201BAC7F00E0C2B3 /* DeviceEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceEventModel.swift; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		AFF11704201BAC7F00E0C2B3 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		AFF11705201BAC7F00E0C2B3 /* ObjectStateWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectStateWrapper.swift; sourceTree = "<group>"; };
 		AFF11706201BAC7F00E0C2B3 /* WhiteObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteObjectState.swift; sourceTree = "<group>"; };
+		AFF1170E201BADED00E0C2B3 /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataModel.swift; path = CoreDataModel/CoreDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,7 +252,7 @@
 		AF941734201425A5000045D2 /* CoreDataModel */ = {
 			isa = PBXGroup;
 			children = (
-				AFF116FC201BAB8900E0C2B3 /* CoreDataModel.swift */,
+				AFF1170E201BADED00E0C2B3 /* CoreDataModel.swift */,
 			);
 			name = CoreDataModel;
 			sourceTree = "<group>";
@@ -421,11 +421,11 @@
 				AF941715200D6FB9000045D2 /* RouteDetailsTableViewController.swift in Sources */,
 				AF94171920100FE7000045D2 /* AccuracyViewController.swift in Sources */,
 				AFF1170B201BAC7F00E0C2B3 /* LocationModel.swift in Sources */,
+				AFF1170F201BADED00E0C2B3 /* CoreDataModel.swift in Sources */,
 				AFF1170C201BAC7F00E0C2B3 /* ObjectStateWrapper.swift in Sources */,
 				AF941713200D6613000045D2 /* SettingsUIViewController.swift in Sources */,
 				AF94170D200D5877000045D2 /* DetailViewController.swift in Sources */,
 				AF9417362017A78A000045D2 /* GeoFenceViewController.swift in Sources */,
-				AFF116FD201BAB8900E0C2B3 /* CoreDataModel.swift in Sources */,
 				AF94170F200D5893000045D2 /* RouteSummaryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
