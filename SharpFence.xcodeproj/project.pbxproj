@@ -76,7 +76,7 @@
 		01CD23E420161361005F3065 /* Road.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Road.gpx; sourceTree = "<group>"; };
 		AF227AD6200CF8F300F99DD0 /* SharpFence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharpFence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF227AD9200CF8F300F99DD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF227ADB200CF8F300F99DD0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
+		AF227ADB200CF8F300F99DD0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AF227ADE200CF8F300F99DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF227AE1200CF8F300F99DD0 /* SharpFence.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SharpFence.xcdatamodel; sourceTree = "<group>"; };
 		AF227AE3200CF8F300F99DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,12 +88,12 @@
 		AF227AF8200CF8F300F99DD0 /* SharpFenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharpFenceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF227AFC200CF8F300F99DD0 /* SharpFenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpFenceUITests.swift; sourceTree = "<group>"; };
 		AF227AFE200CF8F300F99DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF94170C200D5877000045D2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ViewControllers/DetailViewController.swift; sourceTree = "<group>"; };
-		AF94170E200D5893000045D2 /* RouteSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteSummaryTableViewCell.swift; path = ViewControllers/RouteSummaryTableViewCell.swift; sourceTree = "<group>"; };
-		AF941712200D6613000045D2 /* SettingsUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsUIViewController.swift; path = ViewControllers/SettingsUIViewController.swift; sourceTree = "<group>"; };
-		AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteDetailsTableViewController.swift; path = ViewControllers/RouteDetailsTableViewController.swift; sourceTree = "<group>"; };
-		AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewCell.swift; path = ViewControllers/SettingsTableViewCell.swift; sourceTree = "<group>"; };
-		AF94171820100FE7000045D2 /* AccuracyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccuracyViewController.swift; path = ViewControllers/AccuracyViewController.swift; sourceTree = "<group>"; };
+		AF94170C200D5877000045D2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AF94170E200D5893000045D2 /* RouteSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		AF941712200D6613000045D2 /* SettingsUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUIViewController.swift; sourceTree = "<group>"; };
+		AF941714200D6FB9000045D2 /* RouteDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailsTableViewController.swift; sourceTree = "<group>"; };
+		AF941716200D98ED000045D2 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		AF94171820100FE7000045D2 /* AccuracyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccuracyViewController.swift; sourceTree = "<group>"; };
 		AF94171C2010FA5E000045D2 /* AbstactObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstactObjectState.swift; sourceTree = "<group>"; };
 		AF94171E2010FA5E000045D2 /* DeviceEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceEventModel.swift; path = SharpFence/DeviceEventModel.swift; sourceTree = "<group>"; };
 		AF94171F2010FA5E000045D2 /* FenceEventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FenceEventModel.swift; path = SharpFence/FenceEventModel.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		AF9417222010FA5E000045D2 /* ObjectStateWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObjectStateWrapper.swift; path = SharpFence/ObjectStateWrapper.swift; sourceTree = "<group>"; };
 		AF9417232010FA5E000045D2 /* WhiteObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WhiteObjectState.swift; path = SharpFence/WhiteObjectState.swift; sourceTree = "<group>"; };
 		AF9417302014250E000045D2 /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataModel.swift; path = "../../../../Downloads/SharpFence-master 3/SharpFence/CoreDataModel.swift"; sourceTree = "<group>"; };
-		AF9417352017A78A000045D2 /* GeoFenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeoFenceViewController.swift; path = ViewControllers/GeoFenceViewController.swift; sourceTree = "<group>"; };
+		AF9417352017A78A000045D2 /* GeoFenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoFenceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
