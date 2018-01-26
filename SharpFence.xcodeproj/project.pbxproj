@@ -101,7 +101,7 @@
 		AF9417212010FA5E000045D2 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		AF9417222010FA5E000045D2 /* ObjectStateWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectStateWrapper.swift; sourceTree = "<group>"; };
 		AF9417232010FA5E000045D2 /* WhiteObjectState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteObjectState.swift; sourceTree = "<group>"; };
-		AF9417302014250E000045D2 /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataModel.swift; path = CoreDataModel/CoreDataModel.swift; sourceTree = "<group>"; };
+		AF9417302014250E000045D2 /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataModel.swift; path = "../../../../Downloads/SharpFence-master 3/SharpFence/CoreDataModel.swift"; sourceTree = "<group>"; };
 		AF9417352017A78A000045D2 /* GeoFenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeoFenceViewController.swift; path = ViewControllers/GeoFenceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
