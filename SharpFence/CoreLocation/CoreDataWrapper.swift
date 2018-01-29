@@ -40,7 +40,30 @@ class CoreDataWrapper {
         
     }
 
-    
+    static func getGFByID(identifier : String) -> LocationModel? {
+        let managedContext = CoreDataWrapper.context()
+        let fetchRequest =
+            NSFetchRequest<TBL_GF_CONFIG>(entityName: "TBL_GF_CONFIG")
+        let predicate = NSPredicate(format: "geoFenceId = %@", identifier)
+        fetchRequest.predicate = predicate
+        // (managedContext?.fetch(fetchRequest).count) != 0
+        
+        do {
+            guard try managedContext?.fetch(fetchRequest).count != 0 else {
+                print("Request GFence not Found")
+                return nil
+            }
+            
+            if let object = try managedContext?.fetch(fetchRequest)[0] {
+            
+                return LocationModel.init(dbModel: object)
+            }
+            
+        } catch let error as NSError {
+            debugPrint(error)
+        }
+             return nil
+    }
     
     static func fetchSavedLocation() -> [TBL_GF_CONFIG]?{
         let managedContext = CoreDataWrapper.context()
@@ -151,6 +174,11 @@ class CoreDataWrapper {
         
         
         do {
+            guard try managedContext?.fetch(fetchRequest).count != 0 else {
+                print("Request GFence not Found")
+                return 
+            }
+            
             if let object = try managedContext?.fetch(fetchRequest)[0] {
                 // if there is exception or there is no value
                   managedContext?.delete(object)

@@ -110,8 +110,8 @@ extension CoreLocationManager: CLLocationManagerDelegate{
         locationModel.latitude = manager.location?.coordinate.latitude
         locationModel.longitude = manager.location?.coordinate.longitude
         locationModel.identifier = region.identifier
-        
-        let fenceEvent = FenceEventModel.init(location: locationModel, event: fenceEventType.entry, distance: 100, timeStamp: UtilityMethods.getCurrentDateString())
+        let distance = self.measureDistance(locationModel: locationModel)
+        let fenceEvent = FenceEventModel.init(location: locationModel, event: fenceEventType.entry, distance: distance, timeStamp: UtilityMethods.getCurrentDateString())
         
         ObjectStateWrapper.sharedObjectStateWrapper.changeState(fenceEvent: fenceEvent, deviceEvent: deviceEvent)
         
@@ -125,12 +125,29 @@ extension CoreLocationManager: CLLocationManagerDelegate{
         locationModel.latitude = manager.location?.coordinate.latitude
         locationModel.longitude = manager.location?.coordinate.longitude
         locationModel.identifier = region.identifier
+        let distance = self.measureDistance(locationModel: locationModel)
         
-        let fenceEvent = FenceEventModel.init(location: locationModel, event: fenceEventType.exit, distance: 100, timeStamp: UtilityMethods.getCurrentDateString())
+        let fenceEvent = FenceEventModel.init(location: locationModel, event: fenceEventType.exit, distance: distance, timeStamp: UtilityMethods.getCurrentDateString())
         
         ObjectStateWrapper.sharedObjectStateWrapper.changeState(fenceEvent: fenceEvent, deviceEvent: deviceEvent)
           self.delegate?.reLoadHomeView()
 }
+    
+    private func measureDistance(locationModel :LocationModel) -> CLLocationDistance?{
+        
+        let gfModel = CoreDataWrapper.getGFByID(identifier: locationModel.identifier ?? "")
+        
+        if let lat = locationModel.latitude, let long = locationModel.longitude, let centerLat =  gfModel?.latitude, let centerLong = gfModel?.longitude {
+          let eventLocation = CLLocation(latitude: lat , longitude: long)
+          let centerLocation  = CLLocation( latitude: centerLat , longitude: centerLong)
+          let distance =  centerLocation.distance(from: eventLocation)
+            return distance
+        }
+        
+    return nil
+    
+    
+    }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus){
         switch status {

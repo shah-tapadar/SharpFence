@@ -29,7 +29,7 @@ struct RouteDetails {
     
 }
 
-struct GFDetails {
+struct GFModels {
     
     var geoFenceId: String?
     var status: Bool?

@@ -36,15 +36,11 @@ class WhiteObjectState:  AbstractObjectState{
     private func processExit(wrapper:ObjectStateWrapper,fenceEvent:FenceEventModel, deviceEvent: DeviceEventModel ){
         let skippedState = GreenObjectState()
 		skippedState.processChangeState(wrapper: wrapper, fenceEvent: fenceEvent, deviceEvent: deviceEvent)
-		//DB UTIL
-        //Save ExEvent
-        CoreDataWrapper.addFenceEventToDB(stateObject: self, event: fenceEvent)
+       // CoreDataWrapper.addFenceEventToDB(stateObject: self, event: fenceEvent)
         wrapper.setState(state: WhiteObjectState())
 	}
 	
     private func processEntry(wrapper:ObjectStateWrapper,fenceEvent:FenceEventModel ){
-		//DB UTIL
-		//Save Entry Event
         CoreDataWrapper.addFenceEventToDB(stateObject: self, event: fenceEvent)
 		wrapper.setState(state: GreenObjectState())
 
