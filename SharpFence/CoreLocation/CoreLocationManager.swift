@@ -9,19 +9,26 @@
 import Foundation
 import CoreLocation
 
-class CoreLocationManager: NSObject {
+class CoreLocationManager: NSObject, LocationAccuracyProtocol {
     let clLocationManagerObject = CLLocationManager()
-   // var stateObject: AbstractObjectState?
+    var stateObject: AbstractObjectState?
     var selectedAccuracyLevel: CLLocationAccuracy?
     var locations: [LocationModel]?
     var monitoredRegions: [CLCircularRegion]?
     var delegate:ReloadHomeView?
+    var accuracyModel: AccuracyDataModel?
+    var locationAccuracy: LocationAccuracy?
     
     
-    func setupLocationManager(locationAccuracy: CLLocationAccuracy?) {
+    func setupLocationManager(locationAccuracyModel: AccuracyDataModel?) {
+        //locationAccuracy: CLLocationAccuracy?
         clLocationManagerObject.delegate = self
        // self.stateObject = stateObject
-        selectedAccuracyLevel = locationAccuracy
+        self.accuracyModel = locationAccuracyModel
+        // Intializing Location Accuracy Tracking
+        self.locationAccuracy = LocationAccuracy.init(currentAccuracy: locationAccuracyModel?.accuracy)
+        self.locationAccuracy?.delegate = self
+        selectedAccuracyLevel = self.locationAccuracy?.getSelectedAccuracyLevel()
         if CLLocationManager.locationServicesEnabled() {
             //handles different cases of app's location services status
             switch CLLocationManager.authorizationStatus() {
@@ -43,12 +50,19 @@ class CoreLocationManager: NSObject {
     func startMonitoring() {
         locationList()
         trackUserLocation()
+        startTrackinguserLocation()
         startTrackingGeofencedRegion()
     }
     
     func stopLocationMonitoring() {
         stopTrackinguserLocation()
         stopTrackingGeofencedRegion()
+    }
+    
+    func trackGPSAccuracy(selectedAccuracy: CLLocationAccuracy?) {
+       // stopTrackinguserLocation()
+        clLocationManagerObject.desiredAccuracy = selectedAccuracy ?? kCLLocationAccuracyBestForNavigation
+      //  startTrackinguserLocation()
     }
     
     private func locationList(){
@@ -59,7 +73,13 @@ class CoreLocationManager: NSObject {
     
     private func trackUserLocation()  {
         clLocationManagerObject.desiredAccuracy = selectedAccuracyLevel ?? kCLLocationAccuracyBest
+        clLocationManagerObject.distanceFilter = self.accuracyModel?.disFilter ?? 0.0
+        clLocationManagerObject.headingFilter = self.accuracyModel?.headFilter ?? 0.0
         clLocationManagerObject.allowsBackgroundLocationUpdates = true
+        
+    }
+    
+    private func startTrackinguserLocation(){
         clLocationManagerObject.startUpdatingLocation()
     }
     

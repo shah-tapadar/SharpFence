@@ -59,7 +59,7 @@ class HomeViewController: UIViewController, ReloadHomeView {
         let switchButton = sender as! UISwitch
         if switchButton.isOn {
             locationManager.delegate = self
-            locationManager.setupLocationManager(locationAccuracy: CoreDataWrapper.getConfigAccuracy()?.accuracy)
+            locationManager.setupLocationManager(locationAccuracyModel: CoreDataWrapper.getConfigAccuracy())
         }else{
             locationManager.stopLocationMonitoring()
              self.routeSummaryTableView.reloadData()

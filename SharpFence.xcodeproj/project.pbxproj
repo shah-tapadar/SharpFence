@@ -26,6 +26,7 @@
 		AF227AE7200CF8F300F99DD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF227AE5200CF8F300F99DD0 /* LaunchScreen.storyboard */; };
 		AF227AF2200CF8F300F99DD0 /* SharpFenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF227AF1200CF8F300F99DD0 /* SharpFenceTests.swift */; };
 		AF227AFD200CF8F300F99DD0 /* SharpFenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF227AFC200CF8F300F99DD0 /* SharpFenceUITests.swift */; };
+		AF83D8BB2058136F0094FAA7 /* LocationAccuracy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF83D8BA2058136F0094FAA7 /* LocationAccuracy.swift */; };
 		AF94170D200D5877000045D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94170C200D5877000045D2 /* DetailViewController.swift */; };
 		AF94170F200D5893000045D2 /* RouteSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF94170E200D5893000045D2 /* RouteSummaryTableViewCell.swift */; };
 		AF941713200D6613000045D2 /* SettingsUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF941712200D6613000045D2 /* SettingsUIViewController.swift */; };
@@ -87,6 +88,7 @@
 		AF227AF8200CF8F300F99DD0 /* SharpFenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharpFenceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF227AFC200CF8F300F99DD0 /* SharpFenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpFenceUITests.swift; sourceTree = "<group>"; };
 		AF227AFE200CF8F300F99DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF83D8BA2058136F0094FAA7 /* LocationAccuracy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAccuracy.swift; sourceTree = "<group>"; };
 		AF94170C200D5877000045D2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AF94170E200D5893000045D2 /* RouteSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		AF941712200D6613000045D2 /* SettingsUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUIViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				0192D623200E0ADA0020B62B /* CoreLocationManager.swift */,
 				0192D6402010C82E0020B62B /* CoreDataWrapper.swift */,
+				AF83D8BA2058136F0094FAA7 /* LocationAccuracy.swift */,
 			);
 			path = CoreLocation;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				AF941713200D6613000045D2 /* SettingsUIViewController.swift in Sources */,
 				AF94170D200D5877000045D2 /* DetailViewController.swift in Sources */,
 				AF9417362017A78A000045D2 /* GeoFenceViewController.swift in Sources */,
+				AF83D8BB2058136F0094FAA7 /* LocationAccuracy.swift in Sources */,
 				AF94170F200D5893000045D2 /* RouteSummaryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
